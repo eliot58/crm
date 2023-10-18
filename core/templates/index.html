@@ -37,8 +37,8 @@
                             <a href="#" onclick="document.querySelector('.popup-common').style.display = 'block'; return false;" style="color: #fff; padding-left: 5px;">Добавить в базу</a>
                         </li>
                     </ul>
-                    {% for elem in commonbase %}
-                        <div class="td" onclick="renderClient('{{elem.name_point}}', '{{elem.fullName}}', '{{elem.address}}', '{{elem.region}}', '{{director_phone}}', '{{manager_phone}}', '{{elem.email}}', '{{elem.with_work}}')" style="cursor: pointer;">{{elem.name_point}}</div>
+                    {% for client in clients %}
+                        <div class="td" onclick="renderClient('{{client.name_point}}', '{{client.fullName}}', '{{client.address}}', '{{client.region}}', '{{client.director_phone}}', '{{client.manager_phone}}', '{{client.email}}', '{{client.with_work}}')" style="cursor: pointer;">{{client.name_point}}</div>
                     {% endfor %}
                 </div>
             </div>
@@ -73,7 +73,7 @@
                         <h1 style="font-size: 20px; font-weight: 500;">Добавление клиента в общую базу</h1>
                         <img src="{% static 'img/close.svg' %}" onclick="document.querySelector('.popup-common').style.display = 'none';" alt="">
                     </div>
-                    <form action="{% url 'commonbase' %}" method="post" style="display: flex; height: 100%; margin: 20px 0px;">
+                    <form action="{% url 'createClient' %}" method="post" style="display: flex; height: 100%; margin: 20px 0px;">
                         {% csrf_token %}
                         <div style="width: 40%;">
                             <div class="form__input" style="margin-top: 0px;">
@@ -178,7 +178,7 @@
             <div id="popup" class="popup popup-common-2">
                 <div class="popup-content">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <h1 style="font-size: 20px; font-weight: 500;">Общая база</h1>
+                        <h1 style="font-size: 20px; font-weight: 500;">Потенциальные клиенты</h1>
                         <img src="{% static 'img/close.svg' %}" onclick="document.querySelector('.popup-common-2').style.display = 'none';" alt="">
                     </div>
                     <form action="" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">

@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class Client(models.Model):
     name_point = models.CharField(max_length = 256, verbose_name="Название торговой точки")
@@ -12,6 +12,7 @@ class Client(models.Model):
     with_work = models.CharField(max_length = 600, null=True, blank=True, verbose_name="С кем работает")
     photo = models.ImageField(upload_to="photo", null=True, blank=True, verbose_name="Фото")
     comment = models.TextField(null=True, blank=True, verbose_name="Комментарий")
+    is_potential = models.BooleanField(default=False)
 
 
     def __str__(self) -> str:
@@ -26,6 +27,7 @@ class Client(models.Model):
 
 
 class Log(models.Model):
+    manager = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     text = models.TextField()
 

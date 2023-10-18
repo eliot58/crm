@@ -4,7 +4,7 @@ from .forms import *
 from django.contrib.auth.decorators import login_required
 from .models import *
 from django.views.decorators.http import require_POST
-
+from datetime import date
 
 #LOGIN LOGOUT
 #============================================================================
@@ -32,11 +32,11 @@ def logout_view(request):
 
 @login_required(login_url='/login/')
 def index(request):
-    return render(request, 'index.html', {"commonbase": Client.objects.all()})
+    return render(request, 'index.html', {"clients": Client.objects.all()})
 
 
 @require_POST
-def commonBase(request):
+def createClient(request):
     client = Client()
     client.name_point = request.POST["name_point"]
     client.fullName = request.POST["fullName"]
@@ -52,4 +52,11 @@ def commonBase(request):
         pass
     client.comment = request.POST["comment"]
     client.save()
+
+    log = Log()
+    log.manager = request.user
+    log.client = client
+    log.text = f"{date.today()} Создан пользователь {request.POST['fullName']}"
+    log.save()
+    
     return redirect(index)

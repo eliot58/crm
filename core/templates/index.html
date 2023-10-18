@@ -38,7 +38,7 @@
                         </li>
                     </ul>
                     {% for elem in commonbase %}
-                        <div class="td" onclick="renderClient(this, '{{elem.name_point}}', '{{elem.fullName}}', '{{elem.address}}', '{{elem.region}}', '{{director_phone}}', '{{manager_phone}}', '{{elem.email}}', '{{elem.with_work}}')" style="cursor: pointer;">{{elem.name_point}}</div>
+                        <div class="td" onclick="renderClient('{{elem.name_point}}', '{{elem.fullName}}', '{{elem.address}}', '{{elem.region}}', '{{director_phone}}', '{{manager_phone}}', '{{elem.email}}', '{{elem.with_work}}')" style="cursor: pointer;">{{elem.name_point}}</div>
                     {% endfor %}
                 </div>
             </div>
@@ -46,10 +46,10 @@
                 <div class="head" style="background-color: #FFBD53; cursor: pointer;" onclick="this.nextElementSibling.querySelector('.dropdown-list').style.display = (this.nextElementSibling.querySelector('.dropdown-list').style.display === 'block') ? 'none' : 'block';">Потенциальные клиенты</div>
                 <div class="tbody">
                     <ul class="dropdown-list">
-                        <li style="background-color: #EFB557;">
+                        <!-- <li style="background-color: #EFB557;">
                             <img src="{% static 'img/add.svg' %}" alt="">
                             <a href="#" onclick="document.querySelector('.popup-common-2').style.display = 'block'; return false;" style="color: #fff; padding-left: 5px;">Добавить в базу</a>
-                        </li>
+                        </li> -->
                         <li style="background-color: #E8AB4A;">
                             <img src="{% static 'img/subscribe.svg' %}" alt="">
                             <a href="" style="color: #fff; padding-left: 5px;">Включить уведомления</a>
@@ -129,7 +129,7 @@
                         <h1 style="font-size: 20px; font-weight: 500;">Общая база</h1>
                         <img src="{% static 'img/close.svg' %}" onclick="document.querySelector('.popup-common-1').style.display = 'none';" alt="">
                     </div>
-                    <form action="" style="display: flex; height: 100%; margin: 20px 0px;">
+                    <form action="" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
                         <div style="display: flex; width: 100%;">
                             <div style="width: 50%; margin-right: 20px;">
                                 <div class="form__input">
@@ -161,7 +161,7 @@
                             </div>
                         </div>
                         <div style="display: flex;">
-                            <div style="min-width: 225px; min-height: 225px;position: relative; border-radius: 8px; background-color: #F6F6F6; text-align: center;">
+                            <div class="photo" style="min-width: 225px; min-height: 225px;position: relative; border-radius: 8px; background-color: #F6F6F6; text-align: center;">
                                 <p style="position: absolute; left: 40%; top: 40%;">Фото</p>
                             </div>
                             <div class="form__input" style="margin: 0px 20px;">
@@ -233,7 +233,7 @@
                     </form>
                 </div>
             </div>
-            <div class="swiper-container" style="position: absolute; top: 182px;">
+            <!-- <div class="swiper-container" style="position: absolute; top: 182px;">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
@@ -292,13 +292,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <script>
         const swiperContainer = document.querySelector('.swiper-container');
         const swiperWrapper = document.querySelector('.swiper-wrapper');
         const swiperSlides = document.querySelectorAll('.swiper-slide');
+        const popup1 = document.querySelector(".popup-common-1")
+
         let currentIndex = 0;
 
         function updateSwiper() {
@@ -320,51 +322,19 @@
             updateSwiper();
         }
 
-        function renderClient(element, name_point, fullName, address, region, director_phone, manager_phone, email, with_work) {
-            if (element.style.backgroundColor == "rgb(168, 235, 117)") {
-                swiperContainer.style.display = "none"
-                element.style.backgroundColor = prevBack
-                element.style.color = "#000"
-            } else {
-                swiperSlides[0].getElementsByTagName("div")[1].innerHTML = `
-                            ${name_point}
-                            <div class="arrows" style="position: absolute; top: 100px; left: 20px;">
-                                <img src="{% static 'img/arrow-left.svg' %}" style="margin-right: 10px;" onclick="" alt="">
-                                <img src="{% static 'img/arrow-right.svg' %}" onclick="nextSlide(1)" alt="">
-                            </div>`
-                swiperSlides[1].getElementsByTagName("div")[1].innerHTML = `
-                            ${fullName}
-                            <div class="arrows" style="position: absolute; top: 100px; left: 20px; display: none;">
-                                <img src="{% static 'img/arrow-left.svg' %}" style="margin-right: 10px;" onclick="prevSlide(this)" alt="">
-                                <img src="{% static 'img/arrow-right.svg' %}" onclick="nextSlide(2)" alt="">
-                            </div>`
-                swiperSlides[2].getElementsByTagName("div")[1].innerHTML = `
-                            ${address}
-                            <div class="arrows" style="position: absolute; top: 100px; left: 20px; display: none;">
-                                <img src="{% static 'img/arrow-left.svg' %}" style="margin-right: 10px;" onclick="prevSlide(this)" alt="">
-                                <img src="{% static 'img/arrow-right.svg' %}" onclick="nextSlide(3)" alt="">
-                            </div>`
-                swiperSlides[3].getElementsByTagName("div")[1].innerHTML = `
-                            ${region}
-                            <div class="arrows" style="position: absolute; top: 100px; left: 20px; display: none;">
-                                <img src="{% static 'img/arrow-left.svg' %}" style="margin-right: 10px;" onclick="prevSlide(this)" alt="">
-                                <img src="{% static 'img/arrow-right.svg' %}" onclick="nextSlide(4)" alt="">
-                            </div>`
-                swiperSlides[4].getElementsByTagName("div")[1].innerHTML = `
-                            ${director_phone}
-                            <div class="arrows" style="position: absolute; top: 100px; left: 20px; display: none;">
-                                <img src="{% static 'img/arrow-left.svg' %}" style="margin-right: 10px;" onclick="prevSlide(this)" alt="">
-                                <img src="{% static 'img/arrow-right.svg' %}" onclick="" alt="">
-                            </div>`
-                swiperSlides[5].getElementsByTagName("div")[1].textContent = manager_phone
-                swiperSlides[6].getElementsByTagName("div")[1].textContent = email
-                swiperSlides[6].getElementsByTagName("div")[1].textContent = with_work
-                prevBack = element.style.backgroundColor;
-                swiperContainer.style.top = `${element.getBoundingClientRect().top - 45}px`
-                swiperContainer.style.display = "block"
-                element.style.backgroundColor = "#A8EB75"
-                element.style.color = "#fff"
-            }
+        function renderClient(name_point, fullName, address, region, director_phone, manager_phone, email, with_work) {
+            const inputs = popup1.querySelectorAll("input")
+            inputs[0].value = name_point
+            inputs[1].value = address
+            inputs[2].value = director_phone
+            inputs[3].value = email
+            inputs[4].value = fullName
+            inputs[5].value = region
+            inputs[6].value = manager_phone
+            inputs[7].value = with_work
+
+            popup1.style.display = "block"
+
         }
 
         

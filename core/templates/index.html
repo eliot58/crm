@@ -1,0 +1,373 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Клиентская база</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="Логотип">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Мои просчеты</a></li>
+                    <li><a class="nav-item__active" href="#">Клиентская база</a></li>
+                </ul>
+            </nav>
+            <div class="exit">
+                <a href="{% url 'logout_core_view' %}">Выйти</a>
+                <img src="{% static 'img/exit.svg' %}" alt="">
+            </div>
+        </header>
+    </div>
+
+    <div class="container">
+        <div class="table">
+            <div class="col" style="border-radius: 24px 0px 0px 0px;">
+                <div class="head" style="background-color: #A8EB76; border-radius: 24px 0px 0px 0px; cursor: pointer;" onclick="this.nextElementSibling.querySelector('.dropdown-list').style.display = (this.nextElementSibling.querySelector('.dropdown-list').style.display === 'block') ? 'none' : 'block';">Общая база</div>
+                <div class="tbody">
+                    <ul class="dropdown-list">
+                        <li style="background-color: #A1E071;">
+                            <img src="{% static 'img/add.svg' %}" alt="">
+                            <a href="#" onclick="document.querySelector('.popup-common').style.display = 'block'; return false;" style="color: #fff; padding-left: 5px;">Добавить в базу</a>
+                        </li>
+                    </ul>
+                    {% for elem in commonbase %}
+                        <div class="td" onclick="renderClient(this, '{{elem.name_point}}', '{{elem.fullName}}', '{{elem.address}}', '{{elem.region}}', '{{director_phone}}', '{{manager_phone}}', '{{elem.email}}', '{{elem.with_work}}')" style="cursor: pointer;">{{elem.name_point}}</div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col">
+                <div class="head" style="background-color: #FFBD53; cursor: pointer;" onclick="this.nextElementSibling.querySelector('.dropdown-list').style.display = (this.nextElementSibling.querySelector('.dropdown-list').style.display === 'block') ? 'none' : 'block';">Потенциальные клиенты</div>
+                <div class="tbody">
+                    <ul class="dropdown-list">
+                        <li style="background-color: #EFB557;">
+                            <img src="{% static 'img/add.svg' %}" alt="">
+                            <a href="#" onclick="document.querySelector('.popup-common-2').style.display = 'block'; return false;" style="color: #fff; padding-left: 5px;">Добавить в базу</a>
+                        </li>
+                        <li style="background-color: #E8AB4A;">
+                            <img src="{% static 'img/subscribe.svg' %}" alt="">
+                            <a href="" style="color: #fff; padding-left: 5px;">Включить уведомления</a>
+                        </li>
+                    </ul>
+                    <div class="td"></div>
+                </div>
+            </div>
+            <div class="col" style="border-radius: 0px 24px 0px 0px;">
+                <div class="head" style="background-color: #B465D3; border-radius: 0px 24px 0px 0px;">Работающие клиенты</div>
+                <div class="tbody">
+                    <ul>
+                        <li></li>
+                    </ul>
+                    <div class="td"></div>
+                </div>
+            </div>
+            <div id="popup" class="popup popup-common">
+                <div class="popup-content">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h1 style="font-size: 20px; font-weight: 500;">Добавление клиента в общую базу</h1>
+                        <img src="{% static 'img/close.svg' %}" onclick="document.querySelector('.popup-common').style.display = 'none';" alt="">
+                    </div>
+                    <form action="{% url 'commonbase' %}" method="post" style="display: flex; height: 100%; margin: 20px 0px;">
+                        {% csrf_token %}
+                        <div style="width: 40%;">
+                            <div class="form__input" style="margin-top: 0px;">
+                                <input type="text" name="name_point" placeholder="Название торговой точки" required>
+                            </div>
+                            <div class="form__input">
+                                <input type="text" name="fullName" placeholder="ФИО">
+                            </div>
+                            <div class="form__input">
+                                <input type="text" name="address" placeholder="Адрес">
+                            </div>
+                            <div class="form__input">
+                                <input type="text" name="region" placeholder="Регион">
+                            </div>
+                            <div class="form__input">
+                                <input type="text" name="director_phone" placeholder="Телефон собственника">
+                            </div>
+                            <div class="form__input">
+                                <input type="text" name="manager_phone" placeholder="Телефон менеджера">
+                            </div>
+                            <div class="form__input">
+                                <input type="text" name="email" placeholder="E-mail">
+                            </div>
+                            <div class="form__input">
+                                <input type="text" name="with_work" placeholder="С кем работает">
+                            </div>
+                        </div>
+                        <div style="width: 15%; margin: 0px 10px;">
+                            <div style="background-color: #F6F6F6; text-align: center; padding: 60px 0px; border-radius: 8px; cursor: pointer;" onclick="this.nextElementSibling.click()">
+                                <img src="{% static 'img/upload.svg' %}" alt="">
+                                <p style="font-weight: 500; color: #939393;">Загрузить фото</p>
+                            </div>
+                            <input type="file" name="photo" hidden>
+                            <div class="form__input">
+                                <textarea name="comment" id="" cols="30" rows="10" placeholder="Комментарий"></textarea>
+                            </div>
+                        </div>
+                        <div style="width: 45%;">
+                            <div style="border: 1px solid #939393; border-radius: 8px; height: 85%;">
+                                <h1 style="font-weight: 500; margin: 10px 0px 0px 10px;">История отношений</h1>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin: 10px 0px;">
+                                <button type="submit" style="width: 95%; text-align: center; padding: 10px 0px; color: #fff; background-color: #A8EB75; border-radius: 12px; font-weight: 600;">Сохранить изменения</button>
+                                <button style="background-color: #A8EB75; border-radius: 12px; margin-left: 10px;" href=""><img style="padding: 5px 10px;" src="{% static 'img/list.svg' %}" alt=""></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="popup" class="popup popup-common-1">
+                <div class="popup-content">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h1 style="font-size: 20px; font-weight: 500;">Общая база</h1>
+                        <img src="{% static 'img/close.svg' %}" onclick="document.querySelector('.popup-common-1').style.display = 'none';" alt="">
+                    </div>
+                    <form action="" style="display: flex; height: 100%; margin: 20px 0px;">
+                        <div style="display: flex; width: 100%;">
+                            <div style="width: 50%; margin-right: 20px;">
+                                <div class="form__input">
+                                    <input type="text" placeholder="Название торговой точки">
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" placeholder="Адрес">
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" placeholder="Телефон собственника">
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" placeholder="E-mail">
+                                </div>
+                            </div>
+                            <div style="width: 50%;">
+                                <div class="form__input">
+                                    <input type="text" placeholder="ФИО">
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" placeholder="Регион">
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" placeholder="Телефон менеджера">
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" placeholder="С кем работает">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex;">
+                            <div style="min-width: 225px; min-height: 225px;position: relative; border-radius: 8px; background-color: #F6F6F6; text-align: center;">
+                                <p style="position: absolute; left: 40%; top: 40%;">Фото</p>
+                            </div>
+                            <div class="form__input" style="margin: 0px 20px;">
+                                <textarea name="" id="" cols="140" rows="10" placeholder="Комментарий"></textarea>
+                            </div>
+                            <div style="display: flex; flex-direction: column;">
+                                <button style="background-color: #A8EB76; color: #000; padding: 35px 0px;border-radius: 12px; width: 400px; margin-bottom: 20px; font-weight: 600; font-size: 24px;">Взять в работу</button>
+                                <button style="background-color: #EF5252; color: #000; padding: 35px 0px;border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px;">Не беру</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="popup" class="popup popup-common-2">
+                <div class="popup-content">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h1 style="font-size: 20px; font-weight: 500;">Общая база</h1>
+                        <img src="{% static 'img/close.svg' %}" onclick="document.querySelector('.popup-common-2').style.display = 'none';" alt="">
+                    </div>
+                    <form action="" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
+                        <div style="display: flex; width: 100%;">
+                            <div style="width: 50%; margin-right: 20px;">
+                                <div class="form__input">
+                                    <input type="text" placeholder="Название торговой точки">
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" placeholder="Адрес">
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" placeholder="Телефон собственника">
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" placeholder="E-mail">
+                                </div>
+                            </div>
+                            <div style="width: 50%;">
+                                <div class="form__input">
+                                    <input type="text" placeholder="ФИО">
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" placeholder="Регион">
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" placeholder="Телефон менеджера">
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" placeholder="С кем работает">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex;">
+                            <div style="min-width: 225px; min-height: 225px;position: relative; border-radius: 8px; background-color: #F6F6F6; text-align: center;">
+                                <p style="position: absolute; left: 40%; top: 40%;">Фото</p>
+                            </div>
+                            <div class="form__input" style="margin: 0px 20px;">
+                                <textarea name="" id="" cols="140" rows="10" placeholder="Комментарий"></textarea>
+                            </div>
+                            <div style="display: flex;">
+                                <div style="display: flex; flex-direction: column; margin-right: 20px;">
+                                    <button style="background-color: #A8EB76; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; margin-bottom: 20px; font-weight: 600;">Отправить расчетчику</button>
+                                    <button style="background-color: #FFBD53; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Установить напоминание</button>
+                                </div>
+                                <div style="display: flex; flex-direction: column;">
+                                    <button style="background-color: #D4D4D4; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; margin-bottom: 20px; font-weight: 600;">Прикпепить счет</button>
+                                    <button style="background-color: #EF5252; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Отказаться</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="swiper-container" style="position: absolute; top: 182px;">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
+                            Название торговой точки
+                        </div>
+                        <div style="padding: 10px 20px; position: relative;">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
+                            ФИО
+                        </div>
+                        <div style="padding: 10px 20px; position: relative;">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
+                            Адрес
+                        </div>
+                        <div style="padding: 10px 20px; position: relative;">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
+                            Регион
+                        </div>
+                        <div style="padding: 10px 20px; position: relative;">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
+                            Телефон собственника
+                        </div>
+                        <div style="padding: 10px 20px; position: relative;">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
+                            Телефон менеджера
+                        </div>
+                        <div style="padding: 10px 20px;">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
+                            E-mail
+                        </div>
+                        <div style="padding: 10px 20px;">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
+                            С кем работает
+                        </div>
+                        <div style="padding: 10px 20px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const swiperContainer = document.querySelector('.swiper-container');
+        const swiperWrapper = document.querySelector('.swiper-wrapper');
+        const swiperSlides = document.querySelectorAll('.swiper-slide');
+        let currentIndex = 0;
+
+        function updateSwiper() {
+            const slideWidth = swiperSlides[0].offsetWidth;
+            const translateX = -currentIndex * slideWidth;
+            swiperWrapper.style.transform = `translateX(${translateX}px)`;
+        }
+
+        function nextSlide(id) {
+            const arrows = document.querySelectorAll(".arrows")
+            arrows[id].style.display = "block"
+            currentIndex = (currentIndex + 1) % swiperSlides.length;
+            updateSwiper();
+        }
+
+        function prevSlide(element) {
+            element.parentNode.style.display = "none"
+            currentIndex = (currentIndex - 1 + swiperSlides.length) % swiperSlides.length;
+            updateSwiper();
+        }
+
+        function renderClient(element, name_point, fullName, address, region, director_phone, manager_phone, email, with_work) {
+            if (element.style.backgroundColor == "rgb(168, 235, 117)") {
+                swiperContainer.style.display = "none"
+                element.style.backgroundColor = prevBack
+                element.style.color = "#000"
+            } else {
+                swiperSlides[0].getElementsByTagName("div")[1].innerHTML = `
+                            ${name_point}
+                            <div class="arrows" style="position: absolute; top: 100px; left: 20px;">
+                                <img src="{% static 'img/arrow-left.svg' %}" style="margin-right: 10px;" onclick="" alt="">
+                                <img src="{% static 'img/arrow-right.svg' %}" onclick="nextSlide(1)" alt="">
+                            </div>`
+                swiperSlides[1].getElementsByTagName("div")[1].innerHTML = `
+                            ${fullName}
+                            <div class="arrows" style="position: absolute; top: 100px; left: 20px; display: none;">
+                                <img src="{% static 'img/arrow-left.svg' %}" style="margin-right: 10px;" onclick="prevSlide(this)" alt="">
+                                <img src="{% static 'img/arrow-right.svg' %}" onclick="nextSlide(2)" alt="">
+                            </div>`
+                swiperSlides[2].getElementsByTagName("div")[1].innerHTML = `
+                            ${address}
+                            <div class="arrows" style="position: absolute; top: 100px; left: 20px; display: none;">
+                                <img src="{% static 'img/arrow-left.svg' %}" style="margin-right: 10px;" onclick="prevSlide(this)" alt="">
+                                <img src="{% static 'img/arrow-right.svg' %}" onclick="nextSlide(3)" alt="">
+                            </div>`
+                swiperSlides[3].getElementsByTagName("div")[1].innerHTML = `
+                            ${region}
+                            <div class="arrows" style="position: absolute; top: 100px; left: 20px; display: none;">
+                                <img src="{% static 'img/arrow-left.svg' %}" style="margin-right: 10px;" onclick="prevSlide(this)" alt="">
+                                <img src="{% static 'img/arrow-right.svg' %}" onclick="nextSlide(4)" alt="">
+                            </div>`
+                swiperSlides[4].getElementsByTagName("div")[1].innerHTML = `
+                            ${director_phone}
+                            <div class="arrows" style="position: absolute; top: 100px; left: 20px; display: none;">
+                                <img src="{% static 'img/arrow-left.svg' %}" style="margin-right: 10px;" onclick="prevSlide(this)" alt="">
+                                <img src="{% static 'img/arrow-right.svg' %}" onclick="" alt="">
+                            </div>`
+                swiperSlides[5].getElementsByTagName("div")[1].textContent = manager_phone
+                swiperSlides[6].getElementsByTagName("div")[1].textContent = email
+                swiperSlides[6].getElementsByTagName("div")[1].textContent = with_work
+                prevBack = element.style.backgroundColor;
+                swiperContainer.style.top = `${element.getBoundingClientRect().top - 45}px`
+                swiperContainer.style.display = "block"
+                element.style.backgroundColor = "#A8EB75"
+                element.style.color = "#fff"
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

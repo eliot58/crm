@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Авторизация</title>
+</head>
+<body>
+    <section style="display: flex; height: 100vh;">
+        <form action="{% url 'login_view' %}" method="post" style="margin: auto;">
+            {% csrf_token %}
+            <h1 style="font-size: 32px; font-weight: 600; color: #A8EB75; margin-bottom: 60px; text-align: center;">Авторизация</h1>
+            <div class="form__input" style="width: 443px;">
+                {{ form.username }}
+            </div>
+            {{ form.username.errors }}
+            <div class="form__input" style="width: 443px;">
+                {{ form.password }}
+            </div>
+            {{ form.password.errors }}
+            <button class="auth__button" type="submit">Войти</button>
+        </form>
+    </section>
+</body>
+</html>

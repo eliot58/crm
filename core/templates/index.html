@@ -38,7 +38,11 @@
                         </li>
                     </ul>
                     {% for client in clients %}
-                        <div class="td" onclick="renderClient('{{client.name_point}}', '{{client.fullName}}', '{{client.address}}', '{{client.region}}', '{{client.director_phone}}', '{{client.manager_phone}}', '{{client.email}}', '{{client.with_work}}')" style="cursor: pointer;">{{client.name_point}}</div>
+                        {% if client.is_potential %}
+                        
+                        {% else %}
+                            <div class="td" onclick="renderCommon('{{client.name_point}}', '{{client.fullName}}', '{{client.address}}', '{{client.region}}', '{{client.director_phone}}', '{{client.manager_phone}}', '{{client.email}}', '{{client.with_work}}', '{{client.photo.url}}', '{{client.id}}')" style="cursor: pointer;">{{client.name_point}}</div>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
@@ -55,7 +59,11 @@
                             <a href="" style="color: #fff; padding-left: 5px;">Включить уведомления</a>
                         </li>
                     </ul>
-                    <div class="td"></div>
+                    {% for client in clients %}
+                        {% if client.is_potential %}
+                            <div class="td" onclick="renderPotential('{{client.name_point}}', '{{client.fullName}}', '{{client.address}}', '{{client.region}}', '{{client.director_phone}}', '{{client.manager_phone}}', '{{client.email}}', '{{client.with_work}}')" style="cursor: pointer;">{{client.name_point}}</div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
             <div class="col" style="border-radius: 0px 24px 0px 0px;">
@@ -71,9 +79,9 @@
                 <div class="popup-content">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <h1 style="font-size: 20px; font-weight: 500;">Добавление клиента в общую базу</h1>
-                        <img src="{% static 'img/close.svg' %}" onclick="document.querySelector('.popup-common').style.display = 'none';" alt="">
+                        <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-common').style.display = 'none';" alt="">
                     </div>
-                    <form action="{% url 'createClient' %}" method="post" style="display: flex; height: 100%; margin: 20px 0px;">
+                    <form action="{% url 'createClient' %}" enctype="multipart/form-data" method="post" style="display: flex; height: 100%; margin: 20px 0px;">
                         {% csrf_token %}
                         <div style="width: 40%;">
                             <div class="form__input" style="margin-top: 0px;">
@@ -102,11 +110,11 @@
                             </div>
                         </div>
                         <div style="width: 15%; margin: 0px 10px;">
-                            <div style="background-color: #F6F6F6; text-align: center; padding: 60px 0px; border-radius: 8px; cursor: pointer;" onclick="this.nextElementSibling.click()">
+                            <div class="logo_preview" style="background-color: #F6F6F6; text-align: center; padding: 60px 0px; border-radius: 8px; cursor: pointer;" onclick="this.nextElementSibling.click()">
                                 <img src="{% static 'img/upload.svg' %}" alt="">
                                 <p style="font-weight: 500; color: #939393;">Загрузить фото</p>
                             </div>
-                            <input type="file" name="photo" hidden>
+                            <input class="logo_input" type="file" name="photo" hidden>
                             <div class="form__input">
                                 <textarea name="comment" id="" cols="30" rows="10" placeholder="Комментарий"></textarea>
                             </div>
@@ -127,7 +135,7 @@
                 <div class="popup-content">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <h1 style="font-size: 20px; font-weight: 500;">Общая база</h1>
-                        <img src="{% static 'img/close.svg' %}" onclick="document.querySelector('.popup-common-1').style.display = 'none';" alt="">
+                        <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-common-1').style.display = 'none';" alt="">
                     </div>
                     <form action="" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
                         <div style="display: flex; width: 100%;">
@@ -168,8 +176,8 @@
                                 <textarea name="" id="" cols="140" rows="10" placeholder="Комментарий"></textarea>
                             </div>
                             <div style="display: flex; flex-direction: column;">
-                                <button style="background-color: #A8EB76; color: #000; padding: 35px 0px;border-radius: 12px; width: 400px; margin-bottom: 20px; font-weight: 600; font-size: 24px;">Взять в работу</button>
-                                <button style="background-color: #EF5252; color: #000; padding: 35px 0px;border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px;">Не беру</button>
+                                <a href="" class="take" style="background-color: #A8EB76; color: #000; padding: 35px 0px;border-radius: 12px; width: 400px; margin-bottom: 20px; font-weight: 600; font-size: 24px; text-align: center;">Взять в работу</a>
+                                <button type="button" onclick="document.querySelector('.popup-common-1').style.display = 'none';" style="background-color: #EF5252; color: #000; padding: 35px 0px;border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px;">Не беру</button>
                             </div>
                         </div>
                     </form>
@@ -179,7 +187,7 @@
                 <div class="popup-content">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <h1 style="font-size: 20px; font-weight: 500;">Потенциальные клиенты</h1>
-                        <img src="{% static 'img/close.svg' %}" onclick="document.querySelector('.popup-common-2').style.display = 'none';" alt="">
+                        <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-common-2').style.display = 'none';" alt="">
                     </div>
                     <form action="" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
                         <div style="display: flex; width: 100%;">
@@ -300,6 +308,7 @@
         const swiperWrapper = document.querySelector('.swiper-wrapper');
         const swiperSlides = document.querySelectorAll('.swiper-slide');
         const popup1 = document.querySelector(".popup-common-1")
+        const popup2 = document.querySelector(".popup-common-2")
 
         let currentIndex = 0;
 
@@ -322,8 +331,28 @@
             updateSwiper();
         }
 
-        function renderClient(name_point, fullName, address, region, director_phone, manager_phone, email, with_work) {
+        function renderCommon(name_point, fullName, address, region, director_phone, manager_phone, email, with_work, photo, id) {
             const inputs = popup1.querySelectorAll("input")
+            const preview = popup1.querySelector(".photo")
+            const take = popup1.querySelector(".take")
+            inputs[0].value = name_point
+            inputs[1].value = address
+            inputs[2].value = director_phone
+            inputs[3].value = email
+            inputs[4].value = fullName
+            inputs[5].value = region
+            inputs[6].value = manager_phone
+            inputs[7].value = with_work
+            take.href = `/potential/${id}/`
+
+            preview.style.background = `url("${photo}") 0 50%/100% auto no-repeat`;
+
+            popup1.style.display = "block"
+
+        }
+
+        function renderPotential(name_point, fullName, address, region, director_phone, manager_phone, email, with_work) {
+            const inputs = popup2.querySelectorAll("input")
             inputs[0].value = name_point
             inputs[1].value = address
             inputs[2].value = director_phone
@@ -333,9 +362,21 @@
             inputs[6].value = manager_phone
             inputs[7].value = with_work
 
-            popup1.style.display = "block"
+            popup2.style.display = "block"
 
         }
+
+        const logoInput = document.querySelector(".logo_input");
+        const logoPreview = document.querySelector(".logo_preview");
+        logoInput.onchange = (e) => {
+            const [file] = logoInput.files;
+            if (file) {
+            logoPreview.style.background =
+                "url(" + URL.createObjectURL(file) + ") 0 50%/100% auto no-repeat";
+            }
+
+            // logoPreview.querySelector("img").style.display = 'none';
+        };
 
         
     </script>

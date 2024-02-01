@@ -8,4 +8,5 @@ urlpatterns = [
     path('login/', login_view, name='login_view'),
     path('logout/', logout_view, name='logout_core_view'),
     path('createClient/', createClient, name='createClient'),
+    path('potential/<int:id>/', potential, name='potential'),
 ]

@@ -32,6 +32,9 @@ def logout_view(request):
 
 @login_required(login_url='/login/')
 def index(request):
+    if request.user.is_superuser:
+        logout(request)
+        return redirect(login_view)
     return render(request, 'index.html', {"clients": Client.objects.all()})
 
 
@@ -58,5 +61,12 @@ def createClient(request):
     log.client = client
     log.text = f"{date.today()} Создан пользователь {request.POST['fullName']}"
     log.save()
-    
+
+    return redirect(index)
+
+
+def potential(request, id):
+    client = Client.objects.get(id=id)
+    client.is_potential = True
+    client.save()
     return redirect(index)

@@ -20,8 +20,8 @@ class Client(models.Model):
 
 
     class Meta:
-        verbose_name = "Общая база"
-        verbose_name_plural = "Общая база"
+        verbose_name = "База"
+        verbose_name_plural = "База"
 
 
 

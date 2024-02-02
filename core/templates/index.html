@@ -345,7 +345,9 @@
             inputs[7].value = with_work
             take.href = `/potential/${id}/`
 
-            preview.style.background = `url("${photo}") 0 50%/100% auto no-repeat`;
+            if (photo.length != 0) {
+                preview.style.background = `url("${photo}") 0 50%/100% auto no-repeat`;
+            }
 
             popup1.style.display = "block"
 

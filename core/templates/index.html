@@ -61,7 +61,7 @@
                     </ul>
                     {% for client in clients %}
                         {% if client.is_potential %}
-                            <div class="td" onclick="renderPotential('{{client.name_point}}', '{{client.fullName}}', '{{client.address}}', '{{client.region}}', '{{client.director_phone}}', '{{client.manager_phone}}', '{{client.email}}', '{{client.with_work}}')" style="cursor: pointer;">{{client.name_point}}</div>
+                            <div class="td" onclick="renderPotential('{{client.name_point}}', '{{client.fullName}}', '{{client.address}}', '{{client.region}}', '{{client.director_phone}}', '{{client.manager_phone}}', '{{client.email}}', '{{client.with_work}}', {% if client.photo %} '{{client.photo.url}}' {% else %} '' {% endif %}, '{{client.id}}')" style="cursor: pointer;">{{client.name_point}}</div>
                         {% endif %}
                     {% endfor %}
                 </div>
@@ -221,7 +221,7 @@
                             </div>
                         </div>
                         <div style="display: flex;">
-                            <div style="min-width: 225px; min-height: 225px;position: relative; border-radius: 8px; background-color: #F6F6F6; text-align: center;">
+                            <div class="photo" style="min-width: 225px; min-height: 225px;position: relative; border-radius: 8px; background-color: #F6F6F6; text-align: center;">
                                 <p style="position: absolute; left: 40%; top: 40%;">Фото</p>
                             </div>
                             <div class="form__input" style="margin: 0px 20px;">
@@ -353,8 +353,9 @@
 
         }
 
-        function renderPotential(name_point, fullName, address, region, director_phone, manager_phone, email, with_work) {
+        function renderPotential(name_point, fullName, address, region, director_phone, manager_phone, email, with_work, photo, id) {
             const inputs = popup2.querySelectorAll("input")
+            const preview = popup2.querySelector(".photo")
             inputs[0].value = name_point
             inputs[1].value = address
             inputs[2].value = director_phone
@@ -363,6 +364,10 @@
             inputs[5].value = region
             inputs[6].value = manager_phone
             inputs[7].value = with_work
+
+            if (photo.length != 0) {
+                preview.style.background = `url("${photo}") 0 50%/100% auto no-repeat`;
+            }
 
             popup2.style.display = "block"
 

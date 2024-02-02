@@ -41,7 +41,7 @@
                         {% if client.is_potential %}
                         
                         {% else %}
-                            <div class="td" onclick="renderCommon('{{client.name_point}}', '{{client.fullName}}', '{{client.address}}', '{{client.region}}', '{{client.director_phone}}', '{{client.manager_phone}}', '{{client.email}}', '{{client.with_work}}', {% if client.photo %} '{{client.photo.url}}', {% endif %} '{{client.id}}')" style="cursor: pointer;">{{client.name_point}}</div>
+                            <div class="td" onclick="renderCommon('{{client.name_point}}', '{{client.fullName}}', '{{client.address}}', '{{client.region}}', '{{client.director_phone}}', '{{client.manager_phone}}', '{{client.email}}', '{{client.with_work}}', {% if client.photo %} '{{client.photo.url}}' {% else %} '' {% endif %}, '{{client.id}}')" style="cursor: pointer;">{{client.name_point}}</div>
                         {% endif %}
                     {% endfor %}
                 </div>

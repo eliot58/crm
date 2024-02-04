@@ -1,22 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 
 /*Обнуление*/
-*{
+* {
 	padding: 0;
 	margin: 0;
 	border: 0;
 }
-*,*:before,*:after{
+
+*,
+*:before,
+*:after {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
-:focus,:active{outline: none;}
-a:focus,a:active{outline: none;}
 
-nav,footer,header,aside{display: block;}
+:focus,
+:active {
+	outline: none;
+}
 
-html,body{
+a:focus,
+a:active {
+	outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+
+html,
+body {
 	height: 100%;
 	width: 100%;
 	line-height: 1;
@@ -28,17 +45,53 @@ html,body{
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
-input,button,textarea{font-family:inherit;}
 
-input::-ms-clear{display: none;}
-button{cursor: pointer;}
-button::-moz-focus-inner {padding:0;border:0;}
-a, a:visited{text-decoration: none;}
-a:hover{text-decoration: none;}
-ul li{list-style: none;}
-img{vertical-align: top;}
+input,
+button,
+textarea {
+	font-family: inherit;
+}
 
-h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+input::-ms-clear {
+	display: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: 400;
+}
+
 /*--------------------*/
 
 .container {
@@ -58,13 +111,13 @@ a {
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
+	list-style: none;
+	padding: 0;
+	display: flex;
 }
 
 nav li {
-    margin-right: 40px;
+	margin-right: 40px;
 }
 
 .exit {
@@ -125,7 +178,7 @@ nav li {
 	padding: 10px 20px;
 }
 
-.tbody div.td:nth-child(odd){
+.tbody div.td:nth-child(odd) {
 	background-color: #fff;
 }
 
@@ -135,43 +188,20 @@ nav li {
 	font-weight: 600;
 }
 
-.swiper-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-	z-index: 100;
-	display: none;
-}
-
-.swiper-wrapper {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-}
-
-.swiper-slide {
-    flex: 0 0 25%;
-    height: 200px;
-    display: flex;
-	flex-direction: column;
-	background-color: #fff;
-	border: 1px solid #939393;
-}
-
-
 .popup {
-    display: none;
-    position: absolute;
-    top: 75px;
-    left: 0;
-    width: 100%;
-    z-index: 1;
+	display: none;
+	position: absolute;
+	top: 75px;
+	left: 0;
+	width: 100%;
+	z-index: 1;
 }
 
 .popup-content {
-    background-color: #fff;
-    padding: 20px 30px 0px 30px;
-    width: 100%;
-    position: relative;
+	background-color: #fff;
+	padding: 20px 30px 0px 30px;
+	width: 100%;
+	position: relative;
 	border: 2px solid #939393;
 	border-radius: 0px 0px 24px 24px;
 }
@@ -180,23 +210,102 @@ nav li {
 	border: 1px solid #939393;
 	border-radius: 8px;
 	padding: 10px;
-	margin: 10px 0px;
+	margin: 20px 0px;
 }
 
-.form__input input, .form__input textarea{
+.form__input input,
+.form__input textarea {
 	width: 100%;
 	background-color: inherit;
 }
 
 .auth__button {
-    width: 100%;
-    border: none;
-    border-radius: 12px;
-    background: #A8EB75;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0px;
-    font-weight: 600;
-    font-size: 20px;
+	width: 100%;
+	border: none;
+	border-radius: 12px;
+	background: #A8EB75;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0px;
+	font-weight: 600;
+	font-size: 20px;
 	margin-top: 30px;
+}
+
+.log {
+	padding: 5px 10px;
+}
+
+.log:nth-child(even) {
+	background-color: #F6F6F6;
+}
+
+#snackbar {
+	visibility: hidden;
+	min-width: 250px;
+	margin-left: -125px;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	border-radius: 2px;
+	padding: 16px;
+	position: fixed;
+	z-index: 1;
+	left: 50%;
+	bottom: 30px;
+	font-size: 17px;
+}
+
+#snackbar.show {
+	visibility: visible;
+	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+	from {
+		bottom: 0;
+		opacity: 0;
+	}
+
+	to {
+		bottom: 30px;
+		opacity: 1;
+	}
+}
+
+@keyframes fadein {
+	from {
+		bottom: 0;
+		opacity: 0;
+	}
+
+	to {
+		bottom: 30px;
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeout {
+	from {
+		bottom: 30px;
+		opacity: 1;
+	}
+
+	to {
+		bottom: 0;
+		opacity: 0;
+	}
+}
+
+@keyframes fadeout {
+	from {
+		bottom: 30px;
+		opacity: 1;
+	}
+
+	to {
+		bottom: 0;
+		opacity: 0;
+	}
 }

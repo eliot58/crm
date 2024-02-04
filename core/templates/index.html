@@ -81,52 +81,44 @@
                         <h1 style="font-size: 20px; font-weight: 500;">Добавление клиента в общую базу</h1>
                         <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-common').style.display = 'none';" alt="">
                     </div>
-                    <form action="{% url 'createClient' %}" enctype="multipart/form-data" method="post" style="display: flex; height: 100%; margin: 20px 0px;">
+                    <form action="{% url 'createClient' %}" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
                         {% csrf_token %}
-                        <div style="width: 40%;">
-                            <div class="form__input" style="margin-top: 0px;">
-                                <input type="text" name="name_point" placeholder="Название торговой точки" required>
-                            </div>
-                            <div class="form__input">
-                                <input type="text" name="fullName" placeholder="ФИО">
-                            </div>
-                            <div class="form__input">
-                                <input type="text" name="address" placeholder="Адрес">
-                            </div>
-                            <div class="form__input">
-                                <input type="text" name="region" placeholder="Регион">
-                            </div>
-                            <div class="form__input">
-                                <input type="text" name="director_phone" placeholder="Телефон собственника">
-                            </div>
-                            <div class="form__input">
-                                <input type="text" name="manager_phone" placeholder="Телефон менеджера">
-                            </div>
-                            <div class="form__input">
-                                <input type="text" name="email" placeholder="E-mail">
-                            </div>
-                            <div class="form__input">
-                                <input type="text" name="with_work" placeholder="С кем работает">
-                            </div>
-                        </div>
-                        <div style="width: 15%; margin: 0px 10px;">
-                            <div class="logo_preview" style="background-color: #F6F6F6; text-align: center; padding: 60px 0px; border-radius: 8px; cursor: pointer;" onclick="this.nextElementSibling.click()">
-                                <img src="{% static 'img/upload.svg' %}" alt="">
-                                <p style="font-weight: 500; color: #939393;">Загрузить фото</p>
+                        <div style="display: flex; width: 100%;">
+                            <div class="logo_preview" style="min-width: 200px; min-height: 200px; position: relative; border-radius: 8px; background-color: #F6F6F6; text-align: center; margin-right: 20px;" onclick="this.nextElementSibling.click()">
+                                <p style="position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);">Фото</p>
                             </div>
                             <input class="logo_input" type="file" name="photo" hidden>
-                            <div class="form__input">
-                                <textarea name="comment" id="" cols="30" rows="10" placeholder="Комментарий"></textarea>
+                            <div style="width: 50%; margin-right: 20px;">
+                                <div class="form__input" style="margin-top: 0px;">
+                                    <input type="text" name="name_point" placeholder="Название торговой точки" required>
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" name="address" placeholder="Адрес" required>
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" name="director_phone" placeholder="Телефон собственника" required>
+                                </div>
+                                <div class="form__input" style="margin-bottom: 0px;">
+                                    <input type="text" name="email" placeholder="E-mail" required>
+                                </div>
+                            </div>
+                            <div style="width: 50%;">
+                                <div class="form__input" style="margin-top: 0px;">
+                                    <input type="text" name="fullName" placeholder="ФИО" required>
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" name="region" placeholder="Регион" required>
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" name="manager_phone" placeholder="Телефон менеджера" required>
+                                </div>
+                                <div class="form__input" style="margin-bottom: 0px;">
+                                    <input type="text" name="with_work" placeholder="С кем работает" required>
+                                </div>
                             </div>
                         </div>
-                        <div style="width: 45%;">
-                            <div style="border: 1px solid #939393; border-radius: 8px; height: 85%;">
-                                <h1 style="font-weight: 500; margin: 10px 0px 0px 10px;">История отношений</h1>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; margin: 10px 0px;">
-                                <button type="submit" style="width: 95%; text-align: center; padding: 10px 0px; color: #fff; background-color: #A8EB75; border-radius: 12px; font-weight: 600;">Сохранить изменения</button>
-                                <button style="background-color: #A8EB75; border-radius: 12px; margin-left: 10px;" href=""><img style="padding: 5px 10px;" src="{% static 'img/list.svg' %}" alt=""></button>
-                            </div>
+                        <div style="display: flex; justify-content: end;">
+                            <button type="submit" style="background-color: #A8EB76; color: #000; padding: 15px 0px;border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px; margin-top: 20px;">Сохранить</button>
                         </div>
                     </form>
                 </div>
@@ -137,47 +129,51 @@
                         <h1 style="font-size: 20px; font-weight: 500;">Общая база</h1>
                         <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-common-1').style.display = 'none';" alt="">
                     </div>
-                    <form action="" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
-                        <div style="display: flex; width: 100%;">
-                            <div style="width: 50%; margin-right: 20px;">
-                                <div class="form__input">
-                                    <input type="text" placeholder="Название торговой точки">
+                    <form action="" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
+                        {% csrf_token %}
+                        <div style="display: flex; width: 100%; margin-bottom: 20px;">
+                            <div style="width: 33.33%; margin-right: 20px;">
+                                <div class="form__input" style="margin-top: 0px;">
+                                    <input type="text" name="name_point" placeholder="Название торговой точки">
                                 </div>
                                 <div class="form__input">
-                                    <input type="text" placeholder="Адрес">
+                                    <input type="text" name="address" placeholder="Адрес">
                                 </div>
                                 <div class="form__input">
-                                    <input type="text" placeholder="Телефон собственника">
+                                    <input type="text" name="director_phone" placeholder="Телефон собственника">
                                 </div>
-                                <div class="form__input">
-                                    <input type="text" placeholder="E-mail">
+                                <div class="form__input" style="margin-bottom: 0px;">
+                                    <input type="text" name="email" placeholder="E-mail">
                                 </div>
                             </div>
-                            <div style="width: 50%;">
-                                <div class="form__input">
-                                    <input type="text" placeholder="ФИО">
+                            <div style="width: 33.33%;">
+                                <div class="form__input" style="margin-top: 0px;">
+                                    <input type="text" name="fullName" placeholder="ФИО">
                                 </div>
                                 <div class="form__input">
-                                    <input type="text" placeholder="Регион">
+                                    <input type="text" name="region" placeholder="Регион">
                                 </div>
                                 <div class="form__input">
-                                    <input type="text" placeholder="Телефон менеджера">
+                                    <input type="text" name="manager_phone" placeholder="Телефон менеджера">
                                 </div>
-                                <div class="form__input">
-                                    <input type="text" placeholder="С кем работает">
+                                <div class="form__input" style="margin-bottom: 0px;">
+                                    <input type="text" name="with_work" placeholder="С кем работает">
                                 </div>
+                            </div>
+                            <div class="history" style="width: 33.33%; max-height: 220px; border: 1px solid #939393; border-radius: 8px; margin-left: 20px; overflow-y: scroll;">
+                                <h1 style="font-weight: 500; margin: 10px 0px 10px 10px;">История отношений</h1>
                             </div>
                         </div>
                         <div style="display: flex;">
-                            <div class="photo" style="min-width: 225px; min-height: 225px;position: relative; border-radius: 8px; background-color: #F6F6F6; text-align: center;">
-                                <p style="position: absolute; left: 40%; top: 40%;">Фото</p>
+                            <div class="logo_preview" style="min-width: 200px; min-height: 200px; position: relative; border-radius: 8px; background-color: #F6F6F6; text-align: center;" onclick="this.nextElementSibling.click()">
+                                <p style="position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);">Фото</p>
                             </div>
+                            <input type="file" class="logo_input" name="photo" hidden>
                             <div class="form__input" style="margin: 0px 20px;">
-                                <textarea name="" id="" cols="140" rows="10" placeholder="Комментарий"></textarea>
+                                <textarea cols="140" rows="10" placeholder="Комментарий"></textarea>
                             </div>
-                            <div style="display: flex; flex-direction: column;">
-                                <a href="" class="take" style="background-color: #A8EB76; color: #000; padding: 35px 0px;border-radius: 12px; width: 400px; margin-bottom: 20px; font-weight: 600; font-size: 24px; text-align: center;">Взять в работу</a>
-                                <button type="button" onclick="document.querySelector('.popup-common-1').style.display = 'none';" style="background-color: #EF5252; color: #000; padding: 35px 0px;border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px;">Не беру</button>
+                            <div class="buttons" style="display: flex; flex-direction: column; justify-content: space-between;">
+                                <button type="submit" style="background-color: #FFBD53; color: #000; padding: 15px 0px; border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px;">Сохранить</button>
                             </div>
                         </div>
                     </form>
@@ -189,201 +185,240 @@
                         <h1 style="font-size: 20px; font-weight: 500;">Потенциальные клиенты</h1>
                         <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-common-2').style.display = 'none';" alt="">
                     </div>
-                    <form action="" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
-                        <div style="display: flex; width: 100%;">
-                            <div style="width: 50%; margin-right: 20px;">
-                                <div class="form__input">
-                                    <input type="text" placeholder="Название торговой точки">
+                    <form action="" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
+                        {% csrf_token %}
+                        <div style="display: flex; width: 100%; margin-bottom: 20px;">
+                            <div style="width: 33.33%; margin-right: 20px;">
+                                <div class="form__input" style="margin-top: 0px;">
+                                    <input type="text" name="name_point" placeholder="Название торговой точки">
                                 </div>
                                 <div class="form__input">
-                                    <input type="text" placeholder="Адрес">
+                                    <input type="text" name="address" placeholder="Адрес">
                                 </div>
                                 <div class="form__input">
-                                    <input type="text" placeholder="Телефон собственника">
+                                    <input type="text" name="director_phone" placeholder="Телефон собственника">
                                 </div>
-                                <div class="form__input">
-                                    <input type="text" placeholder="E-mail">
+                                <div class="form__input" style="margin-bottom: 0px;">
+                                    <input type="text" name="email" placeholder="E-mail">
                                 </div>
                             </div>
-                            <div style="width: 50%;">
-                                <div class="form__input">
-                                    <input type="text" placeholder="ФИО">
+                            <div style="width: 33.33%;">
+                                <div class="form__input" style="margin-top: 0px;">
+                                    <input type="text" name="fullName" placeholder="ФИО">
                                 </div>
                                 <div class="form__input">
-                                    <input type="text" placeholder="Регион">
+                                    <input type="text" name="region" placeholder="Регион">
                                 </div>
                                 <div class="form__input">
-                                    <input type="text" placeholder="Телефон менеджера">
+                                    <input type="text" name="manager_phone" placeholder="Телефон менеджера">
                                 </div>
-                                <div class="form__input">
-                                    <input type="text" placeholder="С кем работает">
+                                <div class="form__input" style="margin-bottom: 0px;">
+                                    <input type="text" name="with_work" placeholder="С кем работает">
                                 </div>
+                            </div>
+                            <div class="history" style="width: 33.33%; max-height: 220px; border: 1px solid #939393; border-radius: 8px; margin-left: 20px; overflow-y: scroll;">
+                                <h1 style="font-weight: 500; margin: 10px 0px 0px 10px;">История отношений</h1>
                             </div>
                         </div>
                         <div style="display: flex;">
-                            <div class="photo" style="min-width: 225px; min-height: 225px;position: relative; border-radius: 8px; background-color: #F6F6F6; text-align: center;">
-                                <p style="position: absolute; left: 40%; top: 40%;">Фото</p>
+                            <div class="logo_preview" style="min-width: 200px; min-height: 200px;position: relative; border-radius: 8px; background-color: #F6F6F6; text-align: center;" onclick="this.nextElementSibling.click()">
+                                <p style="position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);">Фото</p>
                             </div>
+                            <input type="file" class="logo_input" name="photo" hidden>
                             <div class="form__input" style="margin: 0px 20px;">
-                                <textarea name="" id="" cols="140" rows="10" placeholder="Комментарий"></textarea>
+                                <textarea cols="140" rows="10" placeholder="Комментарий"></textarea>
                             </div>
                             <div style="display: flex;">
-                                <div style="display: flex; flex-direction: column; margin-right: 20px;">
-                                    <button style="background-color: #A8EB76; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; margin-bottom: 20px; font-weight: 600;">Отправить расчетчику</button>
-                                    <button style="background-color: #FFBD53; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Установить напоминание</button>
+                                <div class="buttons-1" style="display: flex; flex-direction: column; justify-content: space-between; margin-right: 20px;">
+                                    <button type="submit" style="background-color: #c3ff53; color: #000; padding: 20px 0px; border-radius: 12px; width: 200px; font-weight: 600;">Сохранить</button>
+                                    <button style="background-color: #A8EB76; color: #000; padding: 20px 0px; border-radius: 12px; width: 200px; font-weight: 600;">Отправить расчетчику</button>
+                                    <button style="background-color: #FFBD53; color: #000; padding: 20px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Установить напоминание</button>
                                 </div>
-                                <div style="display: flex; flex-direction: column;">
+                                <div class="buttons-2" style="display: flex; flex-direction: column;">
                                     <button style="background-color: #D4D4D4; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; margin-bottom: 20px; font-weight: 600;">Прикпепить счет</button>
-                                    <button style="background-color: #EF5252; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Отказаться</button>
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-            <!-- <div class="swiper-container" style="position: absolute; top: 182px;">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
-                            Название торговой точки
-                        </div>
-                        <div style="padding: 10px 20px; position: relative;">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
-                            ФИО
-                        </div>
-                        <div style="padding: 10px 20px; position: relative;">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
-                            Адрес
-                        </div>
-                        <div style="padding: 10px 20px; position: relative;">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
-                            Регион
-                        </div>
-                        <div style="padding: 10px 20px; position: relative;">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
-                            Телефон собственника
-                        </div>
-                        <div style="padding: 10px 20px; position: relative;">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
-                            Телефон менеджера
-                        </div>
-                        <div style="padding: 10px 20px;">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
-                            E-mail
-                        </div>
-                        <div style="padding: 10px 20px;">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div style="font-weight: 500; width: 100%; padding: 10px 20px; border-bottom: 1px solid #939393;">
-                            С кем работает
-                        </div>
-                        <div style="padding: 10px 20px;">
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
+    <div id="snackbar">Сохранено</div>
     <script>
-        const swiperContainer = document.querySelector('.swiper-container');
-        const swiperWrapper = document.querySelector('.swiper-wrapper');
-        const swiperSlides = document.querySelectorAll('.swiper-slide');
+
         const popup1 = document.querySelector(".popup-common-1")
         const popup2 = document.querySelector(".popup-common-2")
 
-        let currentIndex = 0;
-
-        function updateSwiper() {
-            const slideWidth = swiperSlides[0].offsetWidth;
-            const translateX = -currentIndex * slideWidth;
-            swiperWrapper.style.transform = `translateX(${translateX}px)`;
-        }
-
-        function nextSlide(id) {
-            const arrows = document.querySelectorAll(".arrows")
-            arrows[id].style.display = "block"
-            currentIndex = (currentIndex + 1) % swiperSlides.length;
-            updateSwiper();
-        }
-
-        function prevSlide(element) {
-            element.parentNode.style.display = "none"
-            currentIndex = (currentIndex - 1 + swiperSlides.length) % swiperSlides.length;
-            updateSwiper();
-        }
-
         function renderCommon(name_point, fullName, address, region, director_phone, manager_phone, email, with_work, photo, id) {
-            const inputs = popup1.querySelectorAll("input")
-            const preview = popup1.querySelector(".photo")
-            const take = popup1.querySelector(".take")
-            inputs[0].value = name_point
-            inputs[1].value = address
-            inputs[2].value = director_phone
-            inputs[3].value = email
-            inputs[4].value = fullName
-            inputs[5].value = region
-            inputs[6].value = manager_phone
-            inputs[7].value = with_work
-            take.href = `/potential/${id}/`
+            const preview = popup1.querySelector(".logo_preview")
+            const form = popup1.querySelector("form")
+            const logs = popup1.querySelectorAll(".log")
+            const buttons = popup1.querySelector(".buttons")
+            const history = popup1.querySelector(".history")
+            for (const log of logs) {
+                log.remove()
+            }
+            const name_point_input = popup1.querySelector("input[name='name_point']")
+            const address_input = popup1.querySelector("input[name='address']")
+            const fullName_input = popup1.querySelector("input[name='fullName']")
+            const region_input = popup1.querySelector("input[name='region']")
+            const director_phone_input = popup1.querySelector("input[name='director_phone']")
+            const manager_phone_input = popup1.querySelector("input[name='manager_phone']")
+            const email_input = popup1.querySelector("input[name='email']")
+            const with_work_input = popup1.querySelector("input[name='with_work']")
+            
+            name_point_input.value = name_point
+            address_input.value = address
+            fullName_input.value = fullName
+            region_input.value = region
+            director_phone_input.value = director_phone
+            manager_phone_input.value = manager_phone
+            email_input.value = email
+            with_work_input.value = with_work
+            
+
+            form.action = `/updateClient/${id}/`
+
+            buttons.insertAdjacentHTML("beforeend",`<button type="button" onclick="take(true, this.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #A8EB76; color: #000; padding: 15px 0px;border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px;">Взять в работу</button>`)
+            buttons.insertAdjacentHTML("beforeend",`<button type="button" onclick="take(false, this.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #EF5252; color: #000; padding: 15px 0px;border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px;">Не беру</button>`)
+
 
             if (photo.length != 0) {
                 preview.style.background = `url("${photo}") 0 50%/100% auto no-repeat`;
+                preview.querySelector("p").style.display = 'none';
             }
+
+            let xhr = new XMLHttpRequest();
+			xhr.open('GET', `/get_logs/${id}/`);
+			xhr.responseType = 'json';
+			xhr.onload = function() {
+				if (xhr.status == 200) {
+					for (const log of xhr.response["logs"]) {
+                        history.insertAdjacentHTML("beforeend",`<div class="log">${log}</div>`)
+                    }
+				}
+			};
+			xhr.send();
 
             popup1.style.display = "block"
 
         }
 
         function renderPotential(name_point, fullName, address, region, director_phone, manager_phone, email, with_work, photo, id) {
-            const inputs = popup2.querySelectorAll("input")
-            const preview = popup2.querySelector(".photo")
-            inputs[0].value = name_point
-            inputs[1].value = address
-            inputs[2].value = director_phone
-            inputs[3].value = email
-            inputs[4].value = fullName
-            inputs[5].value = region
-            inputs[6].value = manager_phone
-            inputs[7].value = with_work
+            const preview = popup2.querySelector(".logo_preview")
+            const form = popup2.querySelector("form")
+            const logs = popup2.querySelectorAll(".log")
+            const history = popup2.querySelector(".history")
+            const buttons_1 = popup2.querySelector(".buttons-1")
+            const buttons_2 = popup2.querySelector(".buttons-2")
+            for (const log of logs) {
+                log.remove()
+            }
+            const name_point_input = popup2.querySelector("input[name='name_point']")
+            const address_input = popup2.querySelector("input[name='address']")
+            const fullName_input = popup2.querySelector("input[name='fullName']")
+            const region_input = popup2.querySelector("input[name='region']")
+            const director_phone_input = popup2.querySelector("input[name='director_phone']")
+            const manager_phone_input = popup2.querySelector("input[name='manager_phone']")
+            const email_input = popup2.querySelector("input[name='email']")
+            const with_work_input = popup2.querySelector("input[name='with_work']")
+            
+            name_point_input.value = name_point
+            address_input.value = address
+            fullName_input.value = fullName
+            region_input.value = region
+            director_phone_input.value = director_phone
+            manager_phone_input.value = manager_phone
+            email_input.value = email
+            with_work_input.value = with_work
+
+            form.action = `/updateClient/${id}/`
+
+            buttons_2.insertAdjacentHTML("beforeend",`<button type="button" onclick="refuse(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #EF5252; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Отказаться</button>`)
 
             if (photo.length != 0) {
                 preview.style.background = `url("${photo}") 0 50%/100% auto no-repeat`;
+                preview.querySelector("p").style.display = 'none';
             }
+
+            let xhr = new XMLHttpRequest();
+			xhr.open('GET', `/get_logs/${id}/`);
+			xhr.responseType = 'json';
+			xhr.onload = function() {
+				if (xhr.status == 200) {
+					for (const log of xhr.response["logs"]) {
+                        history.insertAdjacentHTML("beforeend",`<div class="log">${log}</div>`)
+                    }
+				}
+			};
+			xhr.send();
 
             popup2.style.display = "block"
 
         }
 
-        const logoInput = document.querySelector(".logo_input");
-        const logoPreview = document.querySelector(".logo_preview");
-        logoInput.onchange = (e) => {
-            const [file] = logoInput.files;
-            if (file) {
-            logoPreview.style.background =
-                "url(" + URL.createObjectURL(file) + ") 0 50%/100% auto no-repeat";
+        function take(is_take, comment, id) {
+            if (comment.value == '') {
+                alert("Заполните комментарий,почему вы взяли клиента в работу или отказались")
+            } else {
+                let formData = new FormData();
+                if (is_take) {
+                    formData.append('is_take', '1');
+                } else {
+                    formData.append('is_take', '0');
+                }
+                formData.append("comment", comment.value)
+                
+                let xhr = new XMLHttpRequest();
+                xhr.open('POST', `/take/${id}/`);
+                xhr.responseType = 'json';
+                xhr.onload = function() {
+                    if (xhr.status == 200) {
+                        location.reload()
+                    }
+                };
+                xhr.send(formData);
             }
+        }
 
-            // logoPreview.querySelector("img").style.display = 'none';
-        };
+        function refuse(comment, id) {
+            if (comment.value == '') {
+                alert("Заполните комментарий, почему вы взяли клиента в работу или отказались")
+            } else {
+                let formData = new FormData();
+                formData.append("comment", comment.value)
+                let xhr = new XMLHttpRequest();
+                xhr.open('POST', `/refuse/${id}/`);
+                xhr.responseType = 'json';
+                xhr.onload = function() {
+                    if (xhr.status == 200) {
+                        location.reload()
+                    }
+                };
+                xhr.send(formData);
+            }
+        }
+
+        const logoInputs = document.querySelectorAll(".logo_input");
+        for (const logoInput of logoInputs) {
+            logoInput.onchange = (e) => {
+                const [file] = logoInput.files;
+                const logoPreview = logoInput.previousElementSibling
+                if (file) {
+                    logoPreview.style.background =
+                        "url(" + URL.createObjectURL(file) + ") 0 50%/100% auto no-repeat";
+                }
+
+                logoPreview.querySelector("p").style.display = 'none';
+            };
+        }
+
+        function showSnack() {
+            let x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
 
         
     </script>

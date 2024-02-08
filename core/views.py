@@ -201,9 +201,10 @@ def send_calc(request, id):
     log.file = file
     log.save()
     email = EmailMessage(f"Потенциальный клиент от пользователя {request.user.username}", request.POST["comment"], settings.EMAIL_HOST_USER, [Calculator.objects.get(id = int(request.POST['calc'])).email])
-    print(settings.MEDIA_ROOT + file.file.url[7::])
-    with open(settings.MEDIA_ROOT + file.file.url[7::], 'rb') as f:
-        email.attach(os.path.basename(settings.MEDIA_ROOT + file.file.url[7::]), f.read(), 'text/plain')
+    if settings.DEBUG:
+        print(settings.MEDIA_ROOT + '/' + file.file.url[7::])
+        with open(settings.MEDIA_ROOT + '/' + file.file.url[7::], 'rb') as f:
+            email.attach(os.path.basename(settings.MEDIA_ROOT + '/' + file.file.url[7::]), f.read(), 'text/plain')
         
     email.send()
     return redirect(index)

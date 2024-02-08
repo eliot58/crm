@@ -34,7 +34,7 @@
                     <ul class="dropdown-list">
                         <li style="background-color: #A1E071;">
                             <img src="{% static 'img/add.svg' %}" alt="">
-                            <a href="#" onclick="document.querySelector('.popup-common').style.display = 'block'; return false;" style="color: #fff; padding-left: 5px;">Добавить в базу</a>
+                            <a href="#" onclick="document.querySelector('.popup-common-create').style.display = 'block'; return false;" style="color: #fff; padding-left: 5px;">Добавить в базу</a>
                         </li>
                     </ul>
                     {% for client in clients %}
@@ -75,11 +75,30 @@
                     <div class="td"></div>
                 </div>
             </div>
-            <div id="popup" class="popup popup-common">
+            <div id="popup" class="popup-2 popup-sendCalc">
+                <div class="popup-content">
+                    <form action="" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column;">
+                        {% csrf_token %}
+                        <h1 style="font-size: 20px; font-weight: 500; margin-bottom: 10px;">Отправить расчетчику</h1>
+                        <label class="input-file">
+                            <input type="file" name="file" required>		
+                            <span>Выберите файл</span>
+                        </label>
+                        <textarea name="comment" id="" cols="30" rows="10" hidden></textarea>
+                        <select name="calc" class="form__input">
+                            {% for calc in calcs %}
+                                <option value="{{calc.id}}">{{calc.user.username}}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="submit" style="background-color: #A1E071; padding: 10px 0px; border: none; border-radius: 4px; color: #fff;">Отправить</button>
+                    </form>
+                </div>
+            </div>
+            <div id="popup" class="popup-1 popup-common-create">
                 <div class="popup-content">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <h1 style="font-size: 20px; font-weight: 500;">Добавление клиента в общую базу</h1>
-                        <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-common').style.display = 'none';" alt="">
+                        <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-common-create').style.display = 'none';" alt="">
                     </div>
                     <form action="{% url 'createClient' %}" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
                         {% csrf_token %}
@@ -123,11 +142,11 @@
                     </form>
                 </div>
             </div>
-            <div id="popup" class="popup popup-common-1">
+            <div id="popup" class="popup-1 popup-common">
                 <div class="popup-content">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <h1 style="font-size: 20px; font-weight: 500;">Общая база</h1>
-                        <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-common-1').style.display = 'none';" alt="">
+                        <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-common').style.display = 'none';" alt="">
                     </div>
                     <form action="" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
                         {% csrf_token %}
@@ -179,11 +198,11 @@
                     </form>
                 </div>
             </div>
-            <div id="popup" class="popup popup-common-2">
+            <div id="popup" class="popup-1 popup-potential">
                 <div class="popup-content">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <h1 style="font-size: 20px; font-weight: 500;">Потенциальные клиенты</h1>
-                        <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-common-2').style.display = 'none';" alt="">
+                        <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-potential').style.display = 'none';" alt="">
                     </div>
                     <form action="" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
                         {% csrf_token %}
@@ -226,16 +245,14 @@
                             </div>
                             <input type="file" class="logo_input" name="photo" hidden>
                             <div class="form__input" style="margin: 0px 20px;">
-                                <textarea cols="140" rows="10" placeholder="Комментарий"></textarea>
+                                <textarea name="comment" cols="140" rows="10" placeholder="Комментарий"></textarea>
                             </div>
                             <div style="display: flex;">
                                 <div class="buttons-1" style="display: flex; flex-direction: column; justify-content: space-between; margin-right: 20px;">
-                                    <button type="submit" style="background-color: #c3ff53; color: #000; padding: 20px 0px; border-radius: 12px; width: 200px; font-weight: 600;">Сохранить</button>
-                                    <button style="background-color: #A8EB76; color: #000; padding: 20px 0px; border-radius: 12px; width: 200px; font-weight: 600;">Отправить расчетчику</button>
-                                    <button style="background-color: #FFBD53; color: #000; padding: 20px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Установить напоминание</button>
+                                    <button type="submit" style="background-color: #c3ff53; color: #000; padding: 40px 0px; border-radius: 12px; width: 200px; font-weight: 600;">Сохранить</button>
                                 </div>
-                                <div class="buttons-2" style="display: flex; flex-direction: column;">
-                                    <button style="background-color: #D4D4D4; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; margin-bottom: 20px; font-weight: 600;">Прикпепить счет</button>
+                                <div class="buttons-2" style="display: flex; flex-direction: column;justify-content: space-between;">
+                                    <button style="background-color: #D4D4D4; color: #000; padding: 40px 0px; border-radius: 12px; width: 200px; font-weight: 600;">Создать нового дилера</button>
                                 </div>
                             </div>
                         </div>
@@ -247,26 +264,37 @@
     <div id="snackbar">Сохранено</div>
     <script>
 
-        const popup1 = document.querySelector(".popup-common-1")
-        const popup2 = document.querySelector(".popup-common-2")
+        const common = document.querySelector(".popup-common")
+        const potential = document.querySelector(".popup-potential")
+
+
+        window.addEventListener('click', function(event) {
+			let popups = document.querySelectorAll('#popup');
+			for (let popup of popups) {
+				if (event.target == popup) {
+					popup.style.display = 'none';
+				}
+			}
+			
+		});
 
         function renderCommon(name_point, fullName, address, region, director_phone, manager_phone, email, with_work, photo, id) {
-            const preview = popup1.querySelector(".logo_preview")
-            const form = popup1.querySelector("form")
-            const logs = popup1.querySelectorAll(".log")
-            const buttons = popup1.querySelector(".buttons")
-            const history = popup1.querySelector(".history")
+            const preview = common.querySelector(".logo_preview")
+            const form = common.querySelector("form")
+            const logs = common.querySelectorAll(".log")
+            const buttons = common.querySelector(".buttons")
+            const history = common.querySelector(".history")
             for (const log of logs) {
                 log.remove()
             }
-            const name_point_input = popup1.querySelector("input[name='name_point']")
-            const address_input = popup1.querySelector("input[name='address']")
-            const fullName_input = popup1.querySelector("input[name='fullName']")
-            const region_input = popup1.querySelector("input[name='region']")
-            const director_phone_input = popup1.querySelector("input[name='director_phone']")
-            const manager_phone_input = popup1.querySelector("input[name='manager_phone']")
-            const email_input = popup1.querySelector("input[name='email']")
-            const with_work_input = popup1.querySelector("input[name='with_work']")
+            const name_point_input = common.querySelector("input[name='name_point']")
+            const address_input = common.querySelector("input[name='address']")
+            const fullName_input = common.querySelector("input[name='fullName']")
+            const region_input = common.querySelector("input[name='region']")
+            const director_phone_input = common.querySelector("input[name='director_phone']")
+            const manager_phone_input = common.querySelector("input[name='manager_phone']")
+            const email_input = common.querySelector("input[name='email']")
+            const with_work_input = common.querySelector("input[name='with_work']")
             
             name_point_input.value = name_point
             address_input.value = address
@@ -301,28 +329,28 @@
 			};
 			xhr.send();
 
-            popup1.style.display = "block"
+            common.style.display = "block"
 
         }
 
         function renderPotential(name_point, fullName, address, region, director_phone, manager_phone, email, with_work, photo, id) {
-            const preview = popup2.querySelector(".logo_preview")
-            const form = popup2.querySelector("form")
-            const logs = popup2.querySelectorAll(".log")
-            const history = popup2.querySelector(".history")
-            const buttons_1 = popup2.querySelector(".buttons-1")
-            const buttons_2 = popup2.querySelector(".buttons-2")
+            const preview = potential.querySelector(".logo_preview")
+            const form = potential.querySelector("form")
+            const logs = potential.querySelectorAll(".log")
+            const history = potential.querySelector(".history")
+            const buttons_1 = potential.querySelector(".buttons-1")
+            const buttons_2 = potential.querySelector(".buttons-2")
             for (const log of logs) {
                 log.remove()
             }
-            const name_point_input = popup2.querySelector("input[name='name_point']")
-            const address_input = popup2.querySelector("input[name='address']")
-            const fullName_input = popup2.querySelector("input[name='fullName']")
-            const region_input = popup2.querySelector("input[name='region']")
-            const director_phone_input = popup2.querySelector("input[name='director_phone']")
-            const manager_phone_input = popup2.querySelector("input[name='manager_phone']")
-            const email_input = popup2.querySelector("input[name='email']")
-            const with_work_input = popup2.querySelector("input[name='with_work']")
+            const name_point_input = potential.querySelector("input[name='name_point']")
+            const address_input = potential.querySelector("input[name='address']")
+            const fullName_input = potential.querySelector("input[name='fullName']")
+            const region_input = potential.querySelector("input[name='region']")
+            const director_phone_input = potential.querySelector("input[name='director_phone']")
+            const manager_phone_input = potential.querySelector("input[name='manager_phone']")
+            const email_input = potential.querySelector("input[name='email']")
+            const with_work_input = potential.querySelector("input[name='with_work']")
             
             name_point_input.value = name_point
             address_input.value = address
@@ -334,6 +362,8 @@
             with_work_input.value = with_work
 
             form.action = `/updateClient/${id}/`
+
+            buttons_1.insertAdjacentHTML("beforeend",`<button type="button" onclick="sendCalc(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #FFBD53; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Отправить расчетчику</button>`)
 
             buttons_2.insertAdjacentHTML("beforeend",`<button type="button" onclick="refuse(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #EF5252; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Отказаться</button>`)
 
@@ -354,7 +384,7 @@
 			};
 			xhr.send();
 
-            popup2.style.display = "block"
+            potential.style.display = "block"
 
         }
 
@@ -397,6 +427,18 @@
                     }
                 };
                 xhr.send(formData);
+            }
+        }
+
+        function sendCalc(comment, id) {
+            if (comment.value == '') {
+                alert("Заполните комментарий, для отправки расчетчику")
+            } else {
+                const sendCalc = document.querySelector(".popup-sendCalc")
+                const form = sendCalc.querySelector("form")
+                form.action = `/sendCalc/${id}/`
+                form.querySelector("textarea").value = comment.value
+                sendCalc.style.display = "block"
             }
         }
 

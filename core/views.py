@@ -1,11 +1,14 @@
+import os
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm
 from django.contrib.auth.decorators import login_required
-from .models import Client, Log
+from .models import Client, Log, File, Calculator
 from django.views.decorators.http import require_POST
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.core.mail import EmailMessage
+from django.conf import settings
 
 #LOGIN LOGOUT
 #============================================================================
@@ -36,7 +39,7 @@ def index(request):
     # if request.user.is_superuser:
     #     logout(request)
     #     return redirect(login_view)
-    return render(request, 'index.html', {"clients": Client.objects.all()})
+    return render(request, 'index.html', {"clients": Client.objects.all(), "calcs": Calculator.objects.all()})
 
 
 @require_POST
@@ -57,7 +60,7 @@ def createClient(request):
     client.save()
 
     log = Log()
-    log.manager = request.user
+    log.manager = request.user.manager
     log.client = client
     log.comment = "Создание клиента"
     log.save()
@@ -76,7 +79,7 @@ def updateClient(request, id):
     client = Client.objects.get(id = id)
     if request.POST["name_point"] != client.name_point:
         log = Log()
-        log.manager = request.user
+        log.manager = request.user.manager
         log.client = client
         log.comment = f"Изменено название торговой точки с {client.name_point} на {request.POST['name_point']}"
         log.save()
@@ -84,7 +87,7 @@ def updateClient(request, id):
 
     if request.POST["fullName"] != client.fullName:
         log = Log()
-        log.manager = request.user
+        log.manager = request.user.manager
         log.client = client
         log.comment = f"Изменено ФИО с {client.fullName} на {request.POST['fullName']}"
         log.save()
@@ -92,7 +95,7 @@ def updateClient(request, id):
 
     if request.POST["address"] != client.address:
         log = Log()
-        log.manager = request.user
+        log.manager = request.user.manager
         log.client = client
         log.comment = f"Изменен адрес с {client.address} на {request.POST['address']}"
         log.save()
@@ -100,7 +103,7 @@ def updateClient(request, id):
 
     if request.POST["region"] != client.region:
         log = Log()
-        log.manager = request.user
+        log.manager = request.user.manager
         log.client = client
         log.comment = f"Изменен регион с {client.region} на {request.POST['region']}"
         log.save()
@@ -108,7 +111,7 @@ def updateClient(request, id):
 
     if request.POST["director_phone"] != client.director_phone:
         log = Log()
-        log.manager = request.user
+        log.manager = request.user.manager
         log.client = client
         log.comment = f"Изменен номер телефона собственника с {client.director_phone} на {request.POST['director_phone']}"
         log.save()
@@ -117,7 +120,7 @@ def updateClient(request, id):
 
     if request.POST["manager_phone"] != client.manager_phone:
         log = Log()
-        log.manager = request.user
+        log.manager = request.user.manager
         log.client = client
         log.comment = f"Изменен номер телефона менеджера с {client.manager_phone} на {request.POST['manager_phone']}"
         log.save()
@@ -125,7 +128,7 @@ def updateClient(request, id):
 
     if request.POST["email"] != client.email:
         log = Log()
-        log.manager = request.user
+        log.manager = request.user.manager
         log.client = client
         log.comment = f"Изменен email с {client.email} на {request.POST['email']}"
         log.save()
@@ -133,7 +136,7 @@ def updateClient(request, id):
 
     if request.POST["with_work"] != client.with_work:
         log = Log()
-        log.manager = request.user
+        log.manager = request.user.manager
         log.client = client
         log.comment = f"Изменено поле с кем работает с {client.with_work} на {request.POST['with_work']}"
         log.save()
@@ -146,6 +149,13 @@ def updateClient(request, id):
         pass
     client.save()
 
+    if "comment" in request.POST:
+        log = Log()
+        log.manager = request.user.manager
+        log.client = client
+        log.comment = f"Комментарий: {request.POST['comment']}"
+        log.save()
+
     return redirect(index)
 
 @csrf_exempt
@@ -155,13 +165,13 @@ def take(request, id):
         client.is_potential = True
         client.save()
         log = Log()
-        log.manager = request.user
+        log.manager = request.user.manager
         log.client = client
         log.comment = f"Взят в работу комментарий {request.POST['comment']}"
         log.save()
     else:
         log = Log()
-        log.manager = request.user
+        log.manager = request.user.manager
         log.client = client
         log.comment = f"Не взят в работу комментарий {request.POST['comment']}"
         log.save()
@@ -173,8 +183,26 @@ def refuse(request, id):
     client.is_potential = False
     client.save()
     log = Log()
-    log.manager = request.user
+    log.manager = request.user.manager
     log.client = client
     log.comment = f"Отказ комментарий {request.POST['comment']}"
     log.save()
+    return redirect(index)
+
+def send_calc(request, id):
+    file = File()
+    file.file = request.FILES["file"]
+    file.save()
+    client = Client.objects.get(id = id)
+    log = Log()
+    log.manager = request.user.manager
+    log.client = client
+    log.comment = f"Отправлено расчетчику комментарий: {request.POST['comment']}"
+    log.file = file
+    log.save()
+    email = EmailMessage(f"Потенциальный клиент от пользователя {request.user.username}", request.POST["comment"], settings.EMAIL_HOST_USER, [Calculator.objects.get(id = int(request.POST['calc'])).email])
+    with open(settings.MEDIA_ROOT + file.file.url[7::], 'rb') as f:
+        email.attach(os.path.basename(settings.MEDIA_ROOT + file.file.url[7::]), f.read(), 'text/plain')
+        
+    email.send()
     return redirect(index)

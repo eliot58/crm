@@ -5,7 +5,7 @@ from .forms import LoginForm
 from django.contrib.auth.decorators import login_required
 from .models import Client, Log, File, Calculator
 from django.views.decorators.http import require_POST
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import EmailMessage
 from django.conf import settings
@@ -36,14 +36,13 @@ def logout_view(request):
 
 @login_required(login_url='/login/')
 def index(request):
-    # if request.user.is_superuser:
-    #     logout(request)
-    #     return redirect(login_view)
     return render(request, 'index.html', {"clients": Client.objects.all(), "calcs": Calculator.objects.all()})
 
 
 @require_POST
 def createClient(request):
+    if not request.user.manager:
+        return HttpResponseForbidden()
     client = Client()
     client.name_point = request.POST["name_point"]
     client.fullName = request.POST["fullName"]
@@ -162,7 +161,7 @@ def updateClient(request, id):
 def take(request, id):
     client = Client.objects.get(id = id)
     if request.POST["is_take"] == "1":
-        client.is_potential = True
+        client.potential = request.user.manager
         client.save()
         log = Log()
         log.manager = request.user.manager
@@ -180,7 +179,7 @@ def take(request, id):
 @csrf_exempt
 def refuse(request, id):
     client = Client.objects.get(id = id)
-    client.is_potential = False
+    client.potential = None
     client.save()
     log = Log()
     log.manager = request.user.manager

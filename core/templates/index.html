@@ -38,9 +38,7 @@
                         </li>
                     </ul>
                     {% for client in clients %}
-                        {% if client.is_potential %}
-                        
-                        {% else %}
+                        {% if not client.potential %}
                             <div class="td" onclick="renderCommon('{{client.name_point}}', '{{client.fullName}}', '{{client.address}}', '{{client.region}}', '{{client.director_phone}}', '{{client.manager_phone}}', '{{client.email}}', '{{client.with_work}}', {% if client.photo %} '{{client.photo.url}}' {% else %} '' {% endif %}, '{{client.id}}')" style="cursor: pointer;">{{client.name_point}}</div>
                         {% endif %}
                     {% endfor %}
@@ -59,10 +57,8 @@
                             <a href="" style="color: #fff; padding-left: 5px;">Включить уведомления</a>
                         </li>
                     </ul>
-                    {% for client in clients %}
-                        {% if client.is_potential %}
-                            <div class="td" onclick="renderPotential('{{client.name_point}}', '{{client.fullName}}', '{{client.address}}', '{{client.region}}', '{{client.director_phone}}', '{{client.manager_phone}}', '{{client.email}}', '{{client.with_work}}', {% if client.photo %} '{{client.photo.url}}' {% else %} '' {% endif %}, '{{client.id}}')" style="cursor: pointer;">{{client.name_point}}</div>
-                        {% endif %}
+                    {% for client in request.user.manager.client_set.all %}
+                        <div class="td" onclick="renderPotential('{{client.name_point}}', '{{client.fullName}}', '{{client.address}}', '{{client.region}}', '{{client.director_phone}}', '{{client.manager_phone}}', '{{client.email}}', '{{client.with_work}}', {% if client.photo %} '{{client.photo.url}}' {% else %} '' {% endif %}, '{{client.id}}')" style="cursor: pointer;">{{client.log_set.all.0.date|date:'d.m.Y'}} <span style='color: #FFBD53;'>{{client.name_point}}</span> {{client.log_set.all.last.comment}}</div>
                     {% endfor %}
                 </div>
             </div>
@@ -189,7 +185,7 @@
                             </div>
                             <input type="file" class="logo_input" name="photo" hidden>
                             <div class="form__input" style="margin: 0px 20px;">
-                                <textarea cols="140" rows="10" placeholder="Комментарий"></textarea>
+                                <textarea name="comment" cols="140" rows="10" placeholder="Комментарий"></textarea>
                             </div>
                             <div class="buttons" style="display: flex; flex-direction: column; justify-content: space-between;">
                                 <button type="submit" style="background-color: #FFBD53; color: #000; padding: 15px 0px; border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px;">Сохранить</button>
@@ -287,6 +283,10 @@
             for (const log of logs) {
                 log.remove()
             }
+
+            for (let i = 1; i < buttons.length; i++){
+                buttons[i].remove()
+            }
             const name_point_input = common.querySelector("input[name='name_point']")
             const address_input = common.querySelector("input[name='address']")
             const fullName_input = common.querySelector("input[name='fullName']")
@@ -340,6 +340,14 @@
             const history = potential.querySelector(".history")
             const buttons_1 = potential.querySelector(".buttons-1")
             const buttons_2 = potential.querySelector(".buttons-2")
+
+            for (let i = 1; i < buttons_1.length; i++){
+                buttons_1[i].remove()
+            }
+
+            for (let i = 1; i < buttons_2.length; i++){
+                buttons_2[i].remove()
+            }
             for (const log of logs) {
                 log.remove()
             }

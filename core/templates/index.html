@@ -284,8 +284,10 @@
                 log.remove()
             }
 
-            for (let i = 1; i < buttons.length; i++){
-                buttons[i].remove()
+            const elems = buttons.querySelectorAll('button')
+
+            for (let i = 1; i < elems.length; i++){
+                elems[i].remove()
             }
             const name_point_input = common.querySelector("input[name='name_point']")
             const address_input = common.querySelector("input[name='address']")
@@ -341,12 +343,17 @@
             const buttons_1 = potential.querySelector(".buttons-1")
             const buttons_2 = potential.querySelector(".buttons-2")
 
-            for (let i = 1; i < buttons_1.length; i++){
-                buttons_1[i].remove()
+
+            const elems = buttons_1.querySelectorAll('button')
+
+            for (let i = 1; i < elems.length; i++){
+                elems[i].remove()
             }
 
-            for (let i = 1; i < buttons_2.length; i++){
-                buttons_2[i].remove()
+            elems = buttons_2.querySelectorAll('button')
+
+            for (let i = 1; i < elems.length; i++){
+                elems[i].remove()
             }
             for (const log of logs) {
                 log.remove()

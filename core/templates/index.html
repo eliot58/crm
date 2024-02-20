@@ -69,7 +69,7 @@
                         <li></li>
                     </ul>
                     {% for agent in agents %}
-                        <div class="td" onclick="renderWorks('{{agent.idcustomer}}', '{{agent.c_name}}', '{{agent.create_date}}', '{{agent.phone}}', '{{agent.email}}', '{{agent.last_order_date}}', '{{agent.manager}}')">{{agent.c_name}}</div>
+                        <div class="td" onclick="renderWorks('{{agent.idcustomer}}', '{{agent.c_name}}', '{{agent.create_date}}', '{{agent.phone}}', '{{agent.email}}', '{{agent.last_order_date}}', '{{agent.manager}}')">{{agent.c_name}} <span style='color: #FFBD53;'>{{agent.last_order_date}}</span></div>
                     {% endfor %}
                 </div>
             </div>

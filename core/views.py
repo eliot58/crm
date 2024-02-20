@@ -46,7 +46,7 @@ def index(request):
         r = requests.get(f"http://176.62.187.250/agent.php")
         agents = json.loads(r.text)
 
-    filtered = list(filter(lambda item: True if request.user.username.lower().find(item["c_name"].lower()) == -1 else False, agents))
+    filtered = list(filter(lambda item: True if request.user.username.lower().find(item["c_name"].lower()) != -1 else False, agents))
 
     agents = sorted(filtered, key = lambda item: item["last_order_date"], reverse = True)
     

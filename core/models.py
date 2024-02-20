@@ -34,14 +34,14 @@ class Calculator(models.Model):
 
 
 class Client(models.Model):
-    name_point = models.CharField(max_length = 256, verbose_name = "Название торговой точки")
-    fullName = models.CharField(max_length = 256, verbose_name = "ФИО")
-    address = models.CharField(max_length = 500, null = True, blank = True, verbose_name = "Адрес")
-    region = models.CharField(max_length = 256, verbose_name = "Регион")
-    director_phone = models.CharField(max_length = 256, verbose_name = "Телефон собственника")
-    manager_phone = models.CharField(max_length = 256, null = True, blank = True, verbose_name = "Телефон менеджера")
+    name_point = models.CharField(max_length = 256, default = '', verbose_name = "Название торговой точки")
+    fullName = models.CharField(max_length = 256, default = '', verbose_name = "ФИО")
+    address = models.CharField(max_length = 500, default = '', verbose_name = "Адрес")
+    region = models.CharField(max_length = 256, default = '', verbose_name = "Регион")
+    director_phone = models.CharField(max_length = 256, default = '', verbose_name = "Телефон собственника")
+    manager_phone = models.CharField(max_length = 256, default = '', verbose_name = "Телефон менеджера")
     email = models.EmailField(null = True, blank = True, verbose_name = "Email")
-    with_work = models.CharField(max_length = 600, null = True, blank = True, verbose_name = "С кем работает")
+    with_work = models.CharField(max_length = 600, default = '', verbose_name = "С кем работает")
     photo = models.ImageField(upload_to = "photo", null = True, blank = True, verbose_name = "Фото")
     potential = models.ForeignKey(Manager, on_delete = models.DO_NOTHING, null = True, blank = True)
 

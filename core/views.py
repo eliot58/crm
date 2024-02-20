@@ -9,6 +9,8 @@ from django.http import JsonResponse, HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import EmailMessage
 from django.conf import settings
+import requests
+import json
 
 #LOGIN LOGOUT
 #============================================================================
@@ -36,7 +38,14 @@ def logout_view(request):
 
 @login_required(login_url='/login/')
 def index(request):
-    return render(request, 'index.html', {"clients": Client.objects.all(), "calcs": Calculator.objects.all()})
+    r = requests.get(f"http://176.62.187.250/agent.php")
+
+    try:
+        agents = json.loads(r.text)
+    except json.decoder.JSONDecodeError:
+        r = requests.get(f"http://176.62.187.250/agent.php")
+        agents = json.loads(r.text)
+    return render(request, 'index.html', {"clients": Client.objects.all(), "calcs": Calculator.objects.all(), "agents": agents})
 
 
 @require_POST
@@ -44,14 +53,47 @@ def createClient(request):
     if not request.user.manager:
         return HttpResponseForbidden()
     client = Client()
-    client.name_point = request.POST["name_point"]
-    client.fullName = request.POST["fullName"]
-    client.address = request.POST["address"]
-    client.region = request.POST["region"]
-    client.director_phone = request.POST["director_phone"]
-    client.manager_phone = request.POST["manager_phone"]
-    client.email = request.POST["email"]
-    client.with_work = request.POST["with_work"]
+    try:
+        client.name_point = request.POST["name_point"]
+    except KeyError:
+        pass
+
+    try:
+        client.fullName = request.POST["fullName"]
+    except KeyError:
+        pass
+
+    try:
+        client.address = request.POST["address"]
+    except KeyError:
+        pass
+
+    try:
+        client.region = request.POST["region"]
+    except KeyError:
+        pass
+
+    try:
+        client.director_phone = request.POST["director_phone"]
+    except KeyError:
+        pass
+
+    try:
+        client.manager_phone = request.POST["manager_phone"]
+    except KeyError:
+        pass
+
+
+    try:
+        client.email = request.POST["email"]
+    except KeyError:
+        pass
+
+    try:
+        client.with_work = request.POST["with_work"]
+    except KeyError:
+        pass
+
     try:
         client.photo = request.FILES["photo"]
     except KeyError:

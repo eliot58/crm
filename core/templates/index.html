@@ -68,7 +68,9 @@
                     <ul>
                         <li></li>
                     </ul>
-                    <div class="td"></div>
+                    {% for agent in agents %}
+                        <div class="td" onclick="renderWorks('{{agent.idcustomer}}', '{{agent.c_name}}', '{{agent.create_date}}', '{{agent.phone}}', '{{agent.email}}', '{{agent.last_order_date}}', '{{agent.manager}}')">{{agent.c_name}}</div>
+                    {% endfor %}
                 </div>
             </div>
             <div id="popup" class="popup-2 popup-sendCalc">
@@ -105,30 +107,30 @@
                             <input class="logo_input" type="file" name="photo" hidden>
                             <div style="width: 50%; margin-right: 20px;">
                                 <div class="form__input" style="margin-top: 0px;">
-                                    <input type="text" name="name_point" placeholder="Название торговой точки" required>
+                                    <input type="text" name="name_point" placeholder="Название торговой точки">
                                 </div>
                                 <div class="form__input">
-                                    <input type="text" name="address" placeholder="Адрес" required>
+                                    <input type="text" name="address" placeholder="Адрес">
                                 </div>
                                 <div class="form__input">
-                                    <input type="text" name="director_phone" placeholder="Телефон собственника" required>
+                                    <input type="text" name="director_phone" placeholder="Телефон собственника">
                                 </div>
                                 <div class="form__input" style="margin-bottom: 0px;">
-                                    <input type="text" name="email" placeholder="E-mail" required>
+                                    <input type="text" name="email" placeholder="E-mail">
                                 </div>
                             </div>
                             <div style="width: 50%;">
                                 <div class="form__input" style="margin-top: 0px;">
-                                    <input type="text" name="fullName" placeholder="ФИО" required>
+                                    <input type="text" name="fullName" placeholder="ФИО">
                                 </div>
                                 <div class="form__input">
-                                    <input type="text" name="region" placeholder="Регион" required>
+                                    <input type="text" name="region" placeholder="Регион">
                                 </div>
                                 <div class="form__input">
-                                    <input type="text" name="manager_phone" placeholder="Телефон менеджера" required>
+                                    <input type="text" name="manager_phone" placeholder="Телефон менеджера">
                                 </div>
                                 <div class="form__input" style="margin-bottom: 0px;">
-                                    <input type="text" name="with_work" placeholder="С кем работает" required>
+                                    <input type="text" name="with_work" placeholder="С кем работает">
                                 </div>
                             </div>
                         </div>
@@ -255,6 +257,44 @@
                     </form>
                 </div>
             </div>
+
+            <div id="popup" class="popup-1 popup-works">
+                <div class="popup-content">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h1 style="font-size: 20px; font-weight: 500;">Работающие клиенты</h1>
+                        <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-works').style.display = 'none';" alt="">
+                    </div>
+                    <form action="" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
+                        <div style="display: flex; width: 100%; margin-bottom: 20px;">
+                            <div style="width: 33.33%; margin-right: 20px;">
+                                <div class="form__input" style="margin-top: 0px;">
+                                    <input type="text" name="idcustomer" disabled placeholder="Id">
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" name="c_name" disabled placeholder="Название клиента">
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" name="create_date" disabled placeholder="Дата создания">
+                                </div>
+                                <div class="form__input" style="margin-bottom: 0px;">
+                                    <input type="text" name="phone" disabled placeholder="Номер">
+                                </div>
+                            </div>
+                            <div style="width: 33.33%;">
+                                <div class="form__input" style="margin-top: 0px;">
+                                    <input type="text" name="email" disabled placeholder="Email">
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" name="last_order_date" disabled placeholder="Дата последнего заказа">
+                                </div>
+                                <div class="form__input">
+                                    <input type="text" name="manager" disabled placeholder="Менеджера">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     <div id="snackbar">Сохранено</div>
@@ -262,6 +302,7 @@
 
         const common = document.querySelector(".popup-common")
         const potential = document.querySelector(".popup-potential")
+        const works = document.querySelector(".popup-works")
 
 
         window.addEventListener('click', function(event) {
@@ -400,6 +441,27 @@
 			xhr.send();
 
             potential.style.display = "block"
+
+        }
+
+        function renderWorks(idcustomer, c_name, create_date, phone, email, last_order_date, manager) {
+            const idcustomer_input = works.querySelector("input[name='idcustomer']")
+            const c_name_input = works.querySelector("input[name='c_name']")
+            const create_date_input = works.querySelector("input[name='create_date']")
+            const phone_input = works.querySelector("input[name='phone']")
+            const email_input = works.querySelector("input[name='email']")
+            const last_order_date_input = works.querySelector("input[name='last_order_date']")
+            const manager_input = works.querySelector("input[name='manager']")
+
+            idcustomer_input.value = idcustomer
+            c_name_input.value = c_name
+            create_date_input.value = create_date
+            phone_input.value = phone
+            email_input.value = email
+            last_order_date_input.value = last_order_date
+            manager_input.value = manager
+
+            works.style.display = "block"
 
         }
 

@@ -1,0 +1,4487 @@
+[
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 4,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 5,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 6,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add База",
+        "content_type": 7,
+        "codename": "add_client"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change База",
+        "content_type": 7,
+        "codename": "change_client"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete База",
+        "content_type": 7,
+        "codename": "delete_client"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view База",
+        "content_type": 7,
+        "codename": "view_client"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add file",
+        "content_type": 8,
+        "codename": "add_file"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change file",
+        "content_type": 8,
+        "codename": "change_file"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete file",
+        "content_type": 8,
+        "codename": "delete_file"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view file",
+        "content_type": 8,
+        "codename": "view_file"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add Менеджер",
+        "content_type": 9,
+        "codename": "add_manager"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change Менеджер",
+        "content_type": 9,
+        "codename": "change_manager"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete Менеджер",
+        "content_type": 9,
+        "codename": "delete_manager"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view Менеджер",
+        "content_type": 9,
+        "codename": "view_manager"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add История обращений",
+        "content_type": 10,
+        "codename": "add_log"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change История обращений",
+        "content_type": 10,
+        "codename": "change_log"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete История обращений",
+        "content_type": 10,
+        "codename": "delete_log"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view История обращений",
+        "content_type": 10,
+        "codename": "view_log"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add Расчетчик",
+        "content_type": 11,
+        "codename": "add_calculator"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change Расчетчик",
+        "content_type": 11,
+        "codename": "change_calculator"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete Расчетчик",
+        "content_type": 11,
+        "codename": "delete_calculator"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view Расчетчик",
+        "content_type": 11,
+        "codename": "view_calculator"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$J2JwNjXp5eLkyZgap4WgMK$pKQt/FplHQbePzf2F3Iau/m+UHTG1swjomAjOtzOdZQ=",
+        "last_login": "2024-02-21T13:39:59.332Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-02-09T10:48:24.669Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$xPIosI889CnKSZ9o78r0Hn$3qAsUSfPf+yW4i6WPkNZZ8jqTFeavI5+VS/I9An/vaA=",
+        "last_login": "2024-02-20T13:24:34.617Z",
+        "is_superuser": false,
+        "username": "Кузьмин_Артем",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-02-09T10:52:48.497Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$Xvnuf3ur4UmiK4L8qold7o$VQkOmydblBsDEo8GkBPqE53longCCIT2GwaNGBu/T3k=",
+        "last_login": "2024-02-12T10:40:35.759Z",
+        "is_superuser": false,
+        "username": "Денисов_Денис",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-02-09T11:03:45.470Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$Av4xmZEKiB6fHxRxcQSgal$XSIjPMpn8gj4p/HKT7/kUb716NbQAXzaVEBwwM3DD94=",
+        "last_login": "2024-02-20T13:02:00.329Z",
+        "is_superuser": false,
+        "username": "Лисовой_Сергей",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-02-09T11:31:22.933Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$mBQFXoW39L6duccI7mhIO4$R2x0ND59FYF6Ln8/Uio5H0kl1uYkCpkXVUXOvKK0WmE=",
+        "last_login": "2024-02-12T10:20:27.223Z",
+        "is_superuser": false,
+        "username": "Калашникова_Анна",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-02-12T10:18:28.439Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$7stks9ChhuBCR2rIzHWMt2$jxCGP48bSOM/cYoeYHZod0a/kfSBsu6djTDtpiTex7Q=",
+        "last_login": "2024-02-20T13:12:21.895Z",
+        "is_superuser": false,
+        "username": "Давыдовская_Алина",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-02-12T10:22:12.731Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$ZYlKBTOxCfAgE1E7r0fCII$u3wtpzUrk9pgKu+Om4RlHHYhwZ4PLkitctkTq9NlT80=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Гуштанова_Ольга",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-02-12T11:23:30.405Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$DtvcIkWLU45iWgS7qas0xP$vkafEexW4A4I0P2VZjvntsxP38/uULbUkGfQX8BBT28=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Максимчук_Марина",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-02-12T11:24:38.361Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 12,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$dm7vkcOrBWzaoStVTEOP3B$683Qn6KI1dv6SjOw/hQoC0mB26OpDXdW2VHSPIdeWTo=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Сахарова_Жанна",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-02-12T11:26:02.211Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 13,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$niDW7lA3Ebvl1uXPyIht1a$dFyPGa1KNAfWf682WAkQBehZKpinzjQWDcPLAJASdUQ=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Дерюгина_Татьяна",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-02-12T11:27:05.241Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 14,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$rjPYN83rE0sLvHvnJPtVK0$cxRO5KDeZ+nTOWztlh6OA4jG945m0YMFEo/Dump3HiA=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Кузнецова_Инна",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-02-12T11:30:17.467Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 15,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$J7TpcFBgNnLAN5S3r6OZ5H$nZp+bx6Mq05JfK8SpdWeo4QsltFVKsF6VZBEmyBbtNI=",
+        "last_login": "2024-02-12T14:12:38.878Z",
+        "is_superuser": false,
+        "username": "Низамов_Сергей",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-02-12T14:02:06.535Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 16,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$Jeg7Kh0MyVA5m7wyxAkEXa$2noN1X4oVWZKsJZQVOogysTnEE/peavsJxM/lWbX0KU=",
+        "last_login": "2024-02-20T12:49:02.323Z",
+        "is_superuser": false,
+        "username": "Лягушин_Евгений",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-02-20T11:48:54.370Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 17,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$nZF4xia6XqzDrMCmMRNS0T$Psjq1EJ6aNKsKytxkqJDaeaIaNIujJuv73281s4ISxg=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Бельский_Михаил",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-02-20T11:51:17.038Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 18,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$d3IaQyP9WVy5cjNmJmGMGv$ntWiJmAh34m0oVLBylc2JmMhGeJjxE8s8KpdjmX5Q7E=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Червова_Анастасия",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-02-20T11:52:59.276Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "core",
+        "model": "client"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "core",
+        "model": "file"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "core",
+        "model": "manager"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "core",
+        "model": "log"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "core",
+        "model": "calculator"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "1lbmhwg9g4nwcxo582eirxfakrfjaikp",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGlnrz1peSnrOYK0_wQFkS3FSIe4OkVJA-2bmvUTgba1hG2UJcxZngeL0u0VOj9J2kO_cbl2m3tZljnJX5EGHvPZcnpfD_TuoPOq3dqw9lkSFAG1hpbP3KRplEimwzGwiT8aTyQ7JgXNoLUwKMBkC0F68P9k5Nts:1rZTjn:Z13F9-abZCT8EgML0Vfeynx_i4HRBCupUK3Y-Dvnw3U",
+        "expire_date": "2024-02-26T10:40:35.761Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "43sdxy71dcskpqcabewqxpb7i0ddwp1w",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSHDW1y69xvIAINUDSSlXRn_3TbpQrf3nHPfLOC61LAOmsOU2YV5dvrdIqYntR3kB7Z756m3ZZ4i3xV-0MFvPdPrerh_BxVH3WqnVSlai7MEVbJVAjyRESBlMYRJ5BilB2tMKk65qCNa0KC2KAtSjtjnC86XN5Y:1rcPv3:rB4yZCUePOTtmG_yuPp5b3isP2eSRcFi8A_eY9aIBYQ",
+        "expire_date": "2024-03-05T13:12:21.897Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "5bla3nie6bl96vl1p2tue0fhiw72ietf",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2pAB7AAu3XsGAswgVUOT0q6Md7dNutDtf-_9twhxXWpYO89hJHERVpx-txTzk9sO6BHbfZJ5ass8Jrkr8qBd3ibi1_Vw_w5q7HWriy6KnAdlFGdMBUA7Q8BoPWPyhACEONiz9lmxgs3VxjBZTAOAY_H5AtJiNxo:1rcPl2:YB6vUjWU1by7x-pJsJ_P8rssizheS5ecXwFpbioaDaQ",
+        "expire_date": "2024-03-05T13:02:00.331Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "75mq9rvplomykajdnu6g49u26gdg4hkl",
+    "fields": {
+        "session_data": ".eJxVjDsOwyAQBe9CHSFYm1_K9D4DWlgITiKQjF1FuXtsyUXSvpl5b-ZxW4vfelr8TOzKJLv8bgHjM9UD0APrvfHY6rrMgR8KP2nnU6P0up3u30HBXvYaCaxVGQZBBoKN1oBUjoJxRogBnAbKMGp0UgsVIOXdHcEp6VAYGIB9vroTNlY:1rZTIb:_K3K4cBrejMil3G3oOUiOWUOoCAAPvh_GpxJjITIBKA",
+        "expire_date": "2024-02-26T10:12:29.807Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "7ln1uun1p8i4i1p8v52ai6y4ayhy2d2p",
+    "fields": {
+        "session_data": ".eJxVjDsOwyAQBe9CHSFYm1_K9D4DWlgITiKQjF1FuXtsyUXSvpl5b-ZxW4vfelr8TOzKJLv8bgHjM9UD0APrvfHY6rrMgR8KP2nnU6P0up3u30HBXvYaCaxVGQZBBoKN1oBUjoJxRogBnAbKMGp0UgsVIOXdHcEp6VAYGIB9vroTNlY:1rbyyC:bXb0gr1ioVHuRAMonYROnVRh-cO_fKoEQlmCuilF_Zo",
+        "expire_date": "2024-03-04T08:25:48.898Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "agxsi6w321dk2g9xm7pmxb52rghy0eke",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtIAwu3fcbyAwzSNWUpI-V8d-1SRe6veec-1IJt7WmbZE5jawuqj-r0-9ImB8y7YTvON2azm1a55H0ruiDLnpoLM_r4f4dVFzqt_bA1HccoEdPTthlYoyAsXiA4ISs9Z3hwpwRChgkQ1TIdCFKsM6r9wcrzDkA:1rZX30:Crl3Wfr78gfe6Yn4c8y3ks21IKwrmli32Eeav0Illp8",
+        "expire_date": "2024-02-26T14:12:38.880Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ajeb6mjc1wb64vrmdoz778182pku9tc5",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hAyUAZcuvcMZBhAqgaS0q6Md9cmXej2v_f-SwTa1hq2kZcwJ3EWIE6_WyR-5LaDdKd265J7W5c5yl2RBx3y2lN-Xg7376DSqN960uw0Ks9G2QmBXDYRCnvtiiveI5kYXUEiZYm1sRYKesjgADEpY8T7A801NzE:1rYPRw:bvlh_PhqbUMn80emg4K0YCpg3ltdnNSnBJbEdpi5nhc",
+        "expire_date": "2024-02-23T11:53:44.924Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "hg7mbzqyhf6tl1sxcxzfh1oob7inx485",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSHDW1y69xvIAINUDSSlXRn_3TbpQrf3nHPfLOC61LAOmsOU2YV5dvrdIqYntR3kB7Z756m3ZZ4i3xV-0MFvPdPrerh_BxVH3WqnVSlai7MEVbJVAjyRESBlMYRJ5BilB2tMKk65qCNa0KC2KAtSjtjnC86XN5Y:1rcPuK:TSu3-mu8Rt9dzFuGqmaqTQpek1SKW6rAz-tQGZN7z7A",
+        "expire_date": "2024-03-05T13:11:36.363Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "jeu3ux9wg0a1m7ez31kz6kpzx6g4wejz",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2pAB7AAu3XsGAswgVUOT0q6Md7dNutDtf-_9twhxXWpYO89hJHERVpx-txTzk9sO6BHbfZJ5ass8Jrkr8qBd3ibi1_Vw_w5q7HWriy6KnAdlFGdMBUA7Q8BoPWPyhACEONiz9lmxgs3VxjBZTAOAY_H5AtJiNxo:1rcPkA:sU012W4NovD15BWZEzZ6uZM4Ae7LxhZXdocKdVrC1SA",
+        "expire_date": "2024-03-05T13:01:06.054Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "juxp27bl5dzxycp2166fxhmyom601gr8",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hAyUAZcuvcMZBhAqgaS0q6Md9cmXej2v_f-SwTa1hq2kZcwJ3EWIE6_WyR-5LaDdKd265J7W5c5yl2RBx3y2lN-Xg7376DSqN960uw0Ks9G2QmBXDYRCnvtiiveI5kYXUEiZYm1sRYKesjgADEpY8T7A801NzE:1rcQ6s:PSezHKr6CcPAG0jlIuyLbNqHInB92Xl_lWFoPhyEQdM",
+        "expire_date": "2024-03-05T13:24:34.619Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "lu69ezcefce70uywigtoiogjuj98g1ox",
+    "fields": {
+        "session_data": ".eJxVjDsOwyAQBe9CHSFYm1_K9D4DWlgITiKQjF1FuXtsyUXSvpl5b-ZxW4vfelr8TOzKJLv8bgHjM9UD0APrvfHY6rrMgR8KP2nnU6P0up3u30HBXvYaCaxVGQZBBoKN1oBUjoJxRogBnAbKMGp0UgsVIOXdHcEp6VAYGIB9vroTNlY:1rcNah:NrovFyu_sAmM5ozb_oVZWsF9uJVYkla6iSyfNR2gueY",
+        "expire_date": "2024-03-05T10:43:11.631Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "mctz31hfpw5r8flkk0limplpgc569xwf",
+    "fields": {
+        "session_data": ".eJxVjDsOwyAQBe9CHSFYm1_K9D4DWlgITiKQjF1FuXtsyUXSvpl5b-ZxW4vfelr8TOzKJLv8bgHjM9UD0APrvfHY6rrMgR8KP2nnU6P0up3u30HBXvYaCaxVGQZBBoKN1oBUjoJxRogBnAbKMGp0UgsVIOXdHcEp6VAYGIB9vroTNlY:1rcPfu:o1Lh21uDcWabU9BGTSEig4SGr8i7mVZX9yANfpDMSkI",
+        "expire_date": "2024-03-05T12:56:42.522Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "te3akktj7axjiu9vl3xieybbq4bci5tc",
+    "fields": {
+        "session_data": ".eJxVjDsOwyAQBe9CHSFYm1_K9D4DWlgITiKQjF1FuXtsyUXSvpl5b-ZxW4vfelr8TOzKJLv8bgHjM9UD0APrvfHY6rrMgR8KP2nnU6P0up3u30HBXvYaCaxVGQZBBoKN1oBUjoJxRogBnAbKMGp0UgsVIOXdHcEp6VAYGIB9vroTNlY:1rcmpL:yngZMQ4wEtlPr37uVgtqLIZnKf54kcSFjh5Yqy9nQpM",
+        "expire_date": "2024-03-06T13:39:59.334Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "tkooyk68aquiisdhde9s1wlfy1yw4kw3",
+    "fields": {
+        "session_data": ".eJxVjDsOwyAQBe9CHSFYm1_K9D4DWlgITiKQjF1FuXtsyUXSvpl5b-ZxW4vfelr8TOzKJLv8bgHjM9UD0APrvfHY6rrMgR8KP2nnU6P0up3u30HBXvYaCaxVGQZBBoKN1oBUjoJxRogBnAbKMGp0UgsVIOXdHcEp6VAYGIB9vroTNlY:1rYOyU:jMoFhz7-T0eAB_BMdQNo-9BUgD0VGNr-gfCn-0FHias",
+        "expire_date": "2024-02-23T11:23:18.234Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "yfs74sx7avkrkgmlh9zg8gfccvd78ek5",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hCY4gAu3fcMzcBMpGogKe3KeHdt0oVu_3vvv9RE21qmrcsyzawuKqjT75YoP6TugO9Ub03nVtdlTnpX9EG7HhvL83q4fweFevnWkAYaAJ0RwzZYIDyjJERxjBysCwwxMmN2EYwJ3kcQAgD2ZG00rN4fxTg24Q:1rZTQJ:57qAXWvBENYOB6mJ2yHp8lTXqekposYVCJfV-PevSek",
+        "expire_date": "2024-02-26T10:20:27.225Z"
+    }
+},
+{
+    "model": "core.manager",
+    "pk": 1,
+    "fields": {
+        "user": 2,
+        "email": "akuzmin@okna-petrov.ru",
+        "phone": "+79995990432"
+    }
+},
+{
+    "model": "core.manager",
+    "pk": 2,
+    "fields": {
+        "user": 5,
+        "email": "ddenisov@okna-petrov.ru",
+        "phone": "+79277060242"
+    }
+},
+{
+    "model": "core.manager",
+    "pk": 4,
+    "fields": {
+        "user": 7,
+        "email": "lisovoy@okna-petrov.ru",
+        "phone": "+79250150056"
+    }
+},
+{
+    "model": "core.manager",
+    "pk": 5,
+    "fields": {
+        "user": 8,
+        "email": "akalashnikova@okna-petrov.ru",
+        "phone": "+79993589100"
+    }
+},
+{
+    "model": "core.manager",
+    "pk": 6,
+    "fields": {
+        "user": 9,
+        "email": "a.davydovskaya@okna-petrov.ru",
+        "phone": "+79995550156"
+    }
+},
+{
+    "model": "core.manager",
+    "pk": 7,
+    "fields": {
+        "user": 15,
+        "email": "snizamov@okna-petrov.ru",
+        "phone": "+79371888168"
+    }
+},
+{
+    "model": "core.manager",
+    "pk": 8,
+    "fields": {
+        "user": 16,
+        "email": "lyagushin.e@okna-petrov.ru",
+        "phone": "+79995998600"
+    }
+},
+{
+    "model": "core.manager",
+    "pk": 9,
+    "fields": {
+        "user": 17,
+        "email": "belskyi@okna-petrov.ru",
+        "phone": "+79265218394"
+    }
+},
+{
+    "model": "core.manager",
+    "pk": 10,
+    "fields": {
+        "user": 18,
+        "email": "a.chervova@okna-petrov.ru",
+        "phone": "+79609869419"
+    }
+},
+{
+    "model": "core.calculator",
+    "pk": 3,
+    "fields": {
+        "user": 10,
+        "email": "ogushtanova@okna-petrov.ru",
+        "phone": "+7"
+    }
+},
+{
+    "model": "core.calculator",
+    "pk": 4,
+    "fields": {
+        "user": 13,
+        "email": "tderugina@okna-petrov.ru",
+        "phone": "+7"
+    }
+},
+{
+    "model": "core.calculator",
+    "pk": 5,
+    "fields": {
+        "user": 14,
+        "email": "ikuznecova@okna-petrov.ru",
+        "phone": "+7"
+    }
+},
+{
+    "model": "core.calculator",
+    "pk": 6,
+    "fields": {
+        "user": 11,
+        "email": "m.marina@okna-petrov.ru",
+        "phone": "+7"
+    }
+},
+{
+    "model": "core.calculator",
+    "pk": 7,
+    "fields": {
+        "user": 12,
+        "email": "dealer@okna-petrov.ru",
+        "phone": "+7"
+    }
+},
+{
+    "model": "core.client",
+    "pk": 4,
+    "fields": {
+        "name_point": "Магазин Окон",
+        "fullName": "Бекренева Л.А ИП",
+        "address": "Серпухов, Северное Шоссе 15",
+        "region": "Серпухов",
+        "director_phone": "89263115211",
+        "manager_phone": "89277060242",
+        "email": "admin@magazinokon150.ru",
+        "with_work": "Денисов Д.И",
+        "photo": "",
+        "potential": 2
+    }
+},
+{
+    "model": "core.client",
+    "pk": 5,
+    "fields": {
+        "name_point": "Шеремет Денис Владимирович",
+        "fullName": "Шеремет Денис Владимирович",
+        "address": "Москва",
+        "region": "МСК",
+        "director_phone": "89851558927",
+        "manager_phone": "89277060242",
+        "email": "нету",
+        "with_work": "Денисов Д.И",
+        "photo": "",
+        "potential": 2
+    }
+},
+{
+    "model": "core.client",
+    "pk": 6,
+    "fields": {
+        "name_point": "Софпласт ООО",
+        "fullName": "Владимир",
+        "address": "Москва",
+        "region": "МСК",
+        "director_phone": "89645877878",
+        "manager_phone": "89277060242",
+        "email": "lavel@bk.ru",
+        "with_work": "Денисов Д.И",
+        "photo": "",
+        "potential": 2
+    }
+},
+{
+    "model": "core.client",
+    "pk": 7,
+    "fields": {
+        "name_point": "Ашихмин Александр Алексеевич",
+        "fullName": "Ашихмин Александр Алексеевич",
+        "address": "Москва",
+        "region": "МСК",
+        "director_phone": "+79266830896",
+        "manager_phone": "89277060242",
+        "email": "нету",
+        "with_work": "Денисов Д.И",
+        "photo": "",
+        "potential": 2
+    }
+},
+{
+    "model": "core.client",
+    "pk": 8,
+    "fields": {
+        "name_point": "ООО Дом Окон",
+        "fullName": "Галина",
+        "address": "Москва",
+        "region": "МСК",
+        "director_phone": "+79151093887",
+        "manager_phone": "89277060242",
+        "email": "нету",
+        "with_work": "Денисов Д.И",
+        "photo": "",
+        "potential": 2
+    }
+},
+{
+    "model": "core.client",
+    "pk": 9,
+    "fields": {
+        "name_point": "окна 10",
+        "fullName": "Олег",
+        "address": "нет",
+        "region": "Москва",
+        "director_phone": "89037293399",
+        "manager_phone": "89371888168",
+        "email": "нет ",
+        "with_work": "Низамов Сергей ",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 10,
+    "fields": {
+        "name_point": "окна 37 ",
+        "fullName": "Ольга",
+        "address": "нет",
+        "region": "Клин ",
+        "director_phone": "89164604949",
+        "manager_phone": "89371888168",
+        "email": "нет ",
+        "with_work": "Низамов Сергей ",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 11,
+    "fields": {
+        "name_point": "ИП Ольференко  окна 11",
+        "fullName": "Александр Ольференко",
+        "address": "нет",
+        "region": "Коломна ",
+        "director_phone": "89168746934",
+        "manager_phone": "89371888168",
+        "email": "нет ",
+        "with_work": "Низамов Сергей ",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 12,
+    "fields": {
+        "name_point": "окна 5",
+        "fullName": "Дмитрий ",
+        "address": "нет",
+        "region": "Москва",
+        "director_phone": "89273779666",
+        "manager_phone": "89371888168",
+        "email": "нет ",
+        "with_work": "Низамов Сергей ",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 13,
+    "fields": {
+        "name_point": "окна 15",
+        "fullName": "Олег",
+        "address": "нет",
+        "region": "Москва",
+        "director_phone": "89167474186",
+        "manager_phone": "89371888168",
+        "email": "нет ",
+        "with_work": "Низамов Сергей ",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 14,
+    "fields": {
+        "name_point": "окна 8",
+        "fullName": "Тимурлан Мирзоев",
+        "address": "нет",
+        "region": "Москва",
+        "director_phone": "89604168627",
+        "manager_phone": "89371888168",
+        "email": "нет ",
+        "with_work": "Низамов Сергей ",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 15,
+    "fields": {
+        "name_point": "ОКНА МСК+",
+        "fullName": "Дмитрий ",
+        "address": "нет",
+        "region": "Москва",
+        "director_phone": "89162936077",
+        "manager_phone": "89371888168",
+        "email": "нет ",
+        "with_work": "Низамов Сергей ",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 16,
+    "fields": {
+        "name_point": "Окна мелке",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79672201000",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 17,
+    "fields": {
+        "name_point": "Елисей Васильев",
+        "fullName": "Фолькон",
+        "address": "",
+        "region": "",
+        "director_phone": "+79610345201",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "????",
+        "photo": "",
+        "potential": null
+    }
+},
+{
+    "model": "core.client",
+    "pk": 18,
+    "fields": {
+        "name_point": "Александр Мельников",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79269902323",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 5
+    }
+},
+{
+    "model": "core.client",
+    "pk": 19,
+    "fields": {
+        "name_point": "Вадим Иванов",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79267477252",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 20,
+    "fields": {
+        "name_point": "Евгений Куропаткин",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79263938997",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 21,
+    "fields": {
+        "name_point": "Ольга Мезенцева",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79107412261",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 22,
+    "fields": {
+        "name_point": "Катя Романова",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79612348566",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 23,
+    "fields": {
+        "name_point": "Ирина Синиченкова",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79265647832",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 24,
+    "fields": {
+        "name_point": "Александр Ковалевич",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79639773502",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 25,
+    "fields": {
+        "name_point": "Иван Шустов",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79859508673",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 2
+    }
+},
+{
+    "model": "core.client",
+    "pk": 26,
+    "fields": {
+        "name_point": "Виталик Богачук",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79672739828",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 27,
+    "fields": {
+        "name_point": "Алёна Елисеева",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79257599880",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 2
+    }
+},
+{
+    "model": "core.client",
+    "pk": 28,
+    "fields": {
+        "name_point": "Анастасия Иванова",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79645886373",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 2
+    }
+},
+{
+    "model": "core.client",
+    "pk": 29,
+    "fields": {
+        "name_point": "Лёша Морских",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79778859067",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 6
+    }
+},
+{
+    "model": "core.client",
+    "pk": 30,
+    "fields": {
+        "name_point": "Дмитрий Чикунов",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79775905632",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 2
+    }
+},
+{
+    "model": "core.client",
+    "pk": 31,
+    "fields": {
+        "name_point": "Антон Кузнецов",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79031127129",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 32,
+    "fields": {
+        "name_point": "Шохрух Джуракулов",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79261010868",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 6
+    }
+},
+{
+    "model": "core.client",
+    "pk": 33,
+    "fields": {
+        "name_point": "Александр Шлейко",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79055435438",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 6
+    }
+},
+{
+    "model": "core.client",
+    "pk": 34,
+    "fields": {
+        "name_point": "Деквест Подольск",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79057865577",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 6
+    }
+},
+{
+    "model": "core.client",
+    "pk": 35,
+    "fields": {
+        "name_point": "Инна Татьянко",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79685307224",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 7
+    }
+},
+{
+    "model": "core.client",
+    "pk": 36,
+    "fields": {
+        "name_point": "Толя Баранов",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79260907118",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 6
+    }
+},
+{
+    "model": "core.client",
+    "pk": 37,
+    "fields": {
+        "name_point": "Эльдор Нурматов",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79915580108",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 6
+    }
+},
+{
+    "model": "core.client",
+    "pk": 38,
+    "fields": {
+        "name_point": "Василий Окновед",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79032690553",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "",
+        "photo": "",
+        "potential": 6
+    }
+},
+{
+    "model": "core.client",
+    "pk": 39,
+    "fields": {
+        "name_point": "Сергей Мельник",
+        "fullName": "",
+        "address": "",
+        "region": "",
+        "director_phone": "+79774603036",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "С пластикой и овд",
+        "photo": "",
+        "potential": 6
+    }
+},
+{
+    "model": "core.client",
+    "pk": 40,
+    "fields": {
+        "name_point": "Александрина Е.А.",
+        "fullName": "",
+        "address": "Пушкино",
+        "region": "",
+        "director_phone": "+79060400777",
+        "manager_phone": "",
+        "email": "",
+        "with_work": "экоокна",
+        "photo": "",
+        "potential": 6
+    }
+},
+{
+    "model": "core.log",
+    "pk": 18,
+    "fields": {
+        "manager": 2,
+        "client": 4,
+        "date": "2024-02-13",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 19,
+    "fields": {
+        "manager": 2,
+        "client": 4,
+        "date": "2024-02-13",
+        "comment": "Взят в работу комментарий Работаю",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 20,
+    "fields": {
+        "manager": 2,
+        "client": 4,
+        "date": "2024-02-13",
+        "comment": "Комментарий: ",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 21,
+    "fields": {
+        "manager": 2,
+        "client": 4,
+        "date": "2024-02-13",
+        "comment": "Комментарий: ",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 22,
+    "fields": {
+        "manager": 2,
+        "client": 4,
+        "date": "2024-02-13",
+        "comment": "Комментарий: Работающий",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 23,
+    "fields": {
+        "manager": 2,
+        "client": 5,
+        "date": "2024-02-13",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 24,
+    "fields": {
+        "manager": 2,
+        "client": 5,
+        "date": "2024-02-13",
+        "comment": "Взят в работу комментарий Работающий",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 25,
+    "fields": {
+        "manager": 2,
+        "client": 6,
+        "date": "2024-02-13",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 26,
+    "fields": {
+        "manager": 2,
+        "client": 6,
+        "date": "2024-02-13",
+        "comment": "Взят в работу комментарий Работающий",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 27,
+    "fields": {
+        "manager": 2,
+        "client": 7,
+        "date": "2024-02-13",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 28,
+    "fields": {
+        "manager": 2,
+        "client": 7,
+        "date": "2024-02-13",
+        "comment": "Взят в работу комментарий Работающий",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 29,
+    "fields": {
+        "manager": 2,
+        "client": 8,
+        "date": "2024-02-13",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 30,
+    "fields": {
+        "manager": 2,
+        "client": 8,
+        "date": "2024-02-13",
+        "comment": "Взят в работу комментарий Работающий",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 31,
+    "fields": {
+        "manager": 7,
+        "client": 9,
+        "date": "2024-02-13",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 32,
+    "fields": {
+        "manager": 7,
+        "client": 9,
+        "date": "2024-02-13",
+        "comment": "Взят в работу комментарий Готов заказать ",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 33,
+    "fields": {
+        "manager": 7,
+        "client": 9,
+        "date": "2024-02-13",
+        "comment": "Комментарий: Взял адрес офиса \r\nПриедет 14.02.2024 -15.02.2024\r\nС наличкой ",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 34,
+    "fields": {
+        "manager": 7,
+        "client": 9,
+        "date": "2024-02-13",
+        "comment": "Комментарий: Кп 203283 ",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 35,
+    "fields": {
+        "manager": 7,
+        "client": 10,
+        "date": "2024-02-13",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 36,
+    "fields": {
+        "manager": 7,
+        "client": 10,
+        "date": "2024-02-13",
+        "comment": "Комментарий: Сделали расчет КП 203971\r\nпо цене проходим .\r\nжду обратную связь ",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 37,
+    "fields": {
+        "manager": 7,
+        "client": 10,
+        "date": "2024-02-13",
+        "comment": "Взят в работу комментарий .",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 38,
+    "fields": {
+        "manager": 7,
+        "client": 11,
+        "date": "2024-02-13",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 39,
+    "fields": {
+        "manager": 7,
+        "client": 11,
+        "date": "2024-02-13",
+        "comment": "Взят в работу комментарий Сделали расчет  КП  203905 \r\nне сходимся по цене ",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 40,
+    "fields": {
+        "manager": 7,
+        "client": 12,
+        "date": "2024-02-13",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 41,
+    "fields": {
+        "manager": 7,
+        "client": 12,
+        "date": "2024-02-13",
+        "comment": "Взят в работу комментарий Сделали расчет КП 203673 \r\nЖдем обратную связь от заказчика \r\nсказал про повешение цены -19.02.2024",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 42,
+    "fields": {
+        "manager": 7,
+        "client": 13,
+        "date": "2024-02-13",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 43,
+    "fields": {
+        "manager": 7,
+        "client": 13,
+        "date": "2024-02-13",
+        "comment": "Взят в работу комментарий Сделали расчет КП 203287  , по цене устроило \r\nЖдем обратную связь от заказчика \r\n",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 44,
+    "fields": {
+        "manager": 7,
+        "client": 14,
+        "date": "2024-02-13",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 45,
+    "fields": {
+        "manager": 7,
+        "client": 14,
+        "date": "2024-02-13",
+        "comment": "Взят в работу комментарий Сделали расчет для приценки . кп 203872\r\nпо цене проходим \r\nЖду расчет для работы ",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 46,
+    "fields": {
+        "manager": 7,
+        "client": 15,
+        "date": "2024-02-13",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 47,
+    "fields": {
+        "manager": 7,
+        "client": 15,
+        "date": "2024-02-13",
+        "comment": "Взят в работу комментарий Сделали расчет  КП203369\r\nжду обратную связь \r\nдолжен скинуть еще расчет ",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 48,
+    "fields": {
+        "manager": 7,
+        "client": 9,
+        "date": "2024-02-15",
+        "comment": "Комментарий: Заказ № 203283 оплатили и  запустили. ",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 49,
+    "fields": {
+        "manager": 7,
+        "client": 10,
+        "date": "2024-02-15",
+        "comment": "Комментарий: Заказ № 203971 оплатили и запустили.",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 50,
+    "fields": {
+        "manager": 1,
+        "client": 16,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 51,
+    "fields": {
+        "manager": 1,
+        "client": 17,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 52,
+    "fields": {
+        "manager": 1,
+        "client": 17,
+        "date": "2024-02-20",
+        "comment": "Изменено название торговой точки с  на Елисей Васильев",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 53,
+    "fields": {
+        "manager": 1,
+        "client": 17,
+        "date": "2024-02-20",
+        "comment": "Комментарий: ",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 54,
+    "fields": {
+        "manager": 1,
+        "client": 18,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 55,
+    "fields": {
+        "manager": 1,
+        "client": 19,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 56,
+    "fields": {
+        "manager": 1,
+        "client": 20,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 57,
+    "fields": {
+        "manager": 1,
+        "client": 21,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 58,
+    "fields": {
+        "manager": 1,
+        "client": 22,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 59,
+    "fields": {
+        "manager": 1,
+        "client": 23,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 60,
+    "fields": {
+        "manager": 1,
+        "client": 24,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 61,
+    "fields": {
+        "manager": 1,
+        "client": 25,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 62,
+    "fields": {
+        "manager": 1,
+        "client": 26,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 63,
+    "fields": {
+        "manager": 1,
+        "client": 27,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 64,
+    "fields": {
+        "manager": 1,
+        "client": 28,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 65,
+    "fields": {
+        "manager": 1,
+        "client": 29,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 66,
+    "fields": {
+        "manager": 1,
+        "client": 30,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 67,
+    "fields": {
+        "manager": 1,
+        "client": 31,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 68,
+    "fields": {
+        "manager": 1,
+        "client": 32,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 69,
+    "fields": {
+        "manager": 1,
+        "client": 33,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 70,
+    "fields": {
+        "manager": 1,
+        "client": 34,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 71,
+    "fields": {
+        "manager": 1,
+        "client": 35,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 72,
+    "fields": {
+        "manager": 1,
+        "client": 36,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 73,
+    "fields": {
+        "manager": 1,
+        "client": 37,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 74,
+    "fields": {
+        "manager": 1,
+        "client": 38,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 75,
+    "fields": {
+        "manager": 1,
+        "client": 39,
+        "date": "2024-02-20",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 76,
+    "fields": {
+        "manager": 1,
+        "client": 16,
+        "date": "2024-02-20",
+        "comment": "Комментарий: ",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 77,
+    "fields": {
+        "manager": 1,
+        "client": 16,
+        "date": "2024-02-20",
+        "comment": "Комментарий: ",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 78,
+    "fields": {
+        "manager": 1,
+        "client": 16,
+        "date": "2024-02-20",
+        "comment": "Комментарий: 1",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 79,
+    "fields": {
+        "manager": 1,
+        "client": 16,
+        "date": "2024-02-20",
+        "comment": "Комментарий: ",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 80,
+    "fields": {
+        "manager": 1,
+        "client": 16,
+        "date": "2024-02-20",
+        "comment": "Взят в работу комментарий 1",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 81,
+    "fields": {
+        "manager": 1,
+        "client": 16,
+        "date": "2024-02-20",
+        "comment": "Отказ комментарий не абонент",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 82,
+    "fields": {
+        "manager": 1,
+        "client": 16,
+        "date": "2024-02-20",
+        "comment": "Взят в работу комментарий тест",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 83,
+    "fields": {
+        "manager": 1,
+        "client": 16,
+        "date": "2024-02-20",
+        "comment": "Отказ комментарий 1",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 84,
+    "fields": {
+        "manager": 1,
+        "client": 16,
+        "date": "2024-02-20",
+        "comment": "Взят в работу комментарий 1",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 85,
+    "fields": {
+        "manager": 1,
+        "client": 16,
+        "date": "2024-02-20",
+        "comment": "Отказ комментарий 1",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 86,
+    "fields": {
+        "manager": 1,
+        "client": 16,
+        "date": "2024-02-21",
+        "comment": "Комментарий: ",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 87,
+    "fields": {
+        "manager": 1,
+        "client": 16,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий 1",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 88,
+    "fields": {
+        "manager": 1,
+        "client": 16,
+        "date": "2024-02-21",
+        "comment": "Отказ комментарий 1",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 89,
+    "fields": {
+        "manager": 5,
+        "client": 18,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий Занимаются ремонтом окон. Не очень приятный тип))) Не говорит с кем работает. Сказал нужен будет ремонт обращайтесь,а так не интересно",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 90,
+    "fields": {
+        "manager": 5,
+        "client": 18,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий Занимаются ремонтом окон. Не очень приятный тип))) Не говорит с кем работает. Сказал нужен будет ремонт обращайтесь,а так не интересно",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 91,
+    "fields": {
+        "manager": 5,
+        "client": 18,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий Занимаются ремонтом окон. Не очень приятный тип))) Не говорит с кем работает. Сказал нужен будет ремонт обращайтесь,а так не интересно",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 92,
+    "fields": {
+        "manager": 5,
+        "client": 18,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий Занимаются ремонтом окон. Не очень приятный тип))) Не говорит с кем работает. Сказал нужен будет ремонт обращайтесь,а так не интересно",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 93,
+    "fields": {
+        "manager": 5,
+        "client": 18,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий Занимаются ремонтом окон. Не очень приятный тип))) Не говорит с кем работает. Сказал нужен будет ремонт обращайтесь,а так не интересно",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 94,
+    "fields": {
+        "manager": 5,
+        "client": 17,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий Созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 95,
+    "fields": {
+        "manager": 5,
+        "client": 17,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий Созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 96,
+    "fields": {
+        "manager": 6,
+        "client": 33,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 97,
+    "fields": {
+        "manager": 6,
+        "client": 33,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 98,
+    "fields": {
+        "manager": 6,
+        "client": 33,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 99,
+    "fields": {
+        "manager": 6,
+        "client": 29,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 100,
+    "fields": {
+        "manager": 6,
+        "client": 29,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 101,
+    "fields": {
+        "manager": 6,
+        "client": 29,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 102,
+    "fields": {
+        "manager": 6,
+        "client": 29,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 103,
+    "fields": {
+        "manager": 6,
+        "client": 34,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 104,
+    "fields": {
+        "manager": 6,
+        "client": 34,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 105,
+    "fields": {
+        "manager": 6,
+        "client": 34,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 106,
+    "fields": {
+        "manager": 6,
+        "client": 34,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 107,
+    "fields": {
+        "manager": 6,
+        "client": 34,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 108,
+    "fields": {
+        "manager": 6,
+        "client": 34,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 109,
+    "fields": {
+        "manager": 6,
+        "client": 32,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 110,
+    "fields": {
+        "manager": 6,
+        "client": 32,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 111,
+    "fields": {
+        "manager": 6,
+        "client": 32,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 112,
+    "fields": {
+        "manager": 6,
+        "client": 32,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 113,
+    "fields": {
+        "manager": 6,
+        "client": 32,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 114,
+    "fields": {
+        "manager": 6,
+        "client": 37,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 115,
+    "fields": {
+        "manager": 6,
+        "client": 37,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 116,
+    "fields": {
+        "manager": 6,
+        "client": 37,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 117,
+    "fields": {
+        "manager": 6,
+        "client": 37,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 118,
+    "fields": {
+        "manager": 6,
+        "client": 37,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 119,
+    "fields": {
+        "manager": 6,
+        "client": 37,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 120,
+    "fields": {
+        "manager": 6,
+        "client": 37,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 121,
+    "fields": {
+        "manager": 6,
+        "client": 37,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 122,
+    "fields": {
+        "manager": 6,
+        "client": 36,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 123,
+    "fields": {
+        "manager": 6,
+        "client": 36,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 124,
+    "fields": {
+        "manager": 6,
+        "client": 36,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 125,
+    "fields": {
+        "manager": 6,
+        "client": 36,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 126,
+    "fields": {
+        "manager": 6,
+        "client": 36,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 127,
+    "fields": {
+        "manager": 6,
+        "client": 36,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 128,
+    "fields": {
+        "manager": 6,
+        "client": 38,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 129,
+    "fields": {
+        "manager": 6,
+        "client": 38,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 130,
+    "fields": {
+        "manager": 6,
+        "client": 38,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 131,
+    "fields": {
+        "manager": 6,
+        "client": 38,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 132,
+    "fields": {
+        "manager": 2,
+        "client": 30,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий Созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 133,
+    "fields": {
+        "manager": 7,
+        "client": 22,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 134,
+    "fields": {
+        "manager": 2,
+        "client": 25,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 135,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 136,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 137,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 138,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 139,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 140,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 141,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 142,
+    "fields": {
+        "manager": 2,
+        "client": 25,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 143,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 144,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 145,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 146,
+    "fields": {
+        "manager": 2,
+        "client": 25,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 147,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 148,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 149,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 150,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 151,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 152,
+    "fields": {
+        "manager": 7,
+        "client": 35,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 153,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 154,
+    "fields": {
+        "manager": 7,
+        "client": 35,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 155,
+    "fields": {
+        "manager": 7,
+        "client": 35,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 156,
+    "fields": {
+        "manager": 2,
+        "client": 27,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 157,
+    "fields": {
+        "manager": 2,
+        "client": 27,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 158,
+    "fields": {
+        "manager": 2,
+        "client": 27,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 159,
+    "fields": {
+        "manager": 2,
+        "client": 27,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 160,
+    "fields": {
+        "manager": 2,
+        "client": 27,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 161,
+    "fields": {
+        "manager": 2,
+        "client": 27,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 162,
+    "fields": {
+        "manager": 2,
+        "client": 27,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 163,
+    "fields": {
+        "manager": 2,
+        "client": 27,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 164,
+    "fields": {
+        "manager": 7,
+        "client": 23,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 165,
+    "fields": {
+        "manager": 7,
+        "client": 23,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 166,
+    "fields": {
+        "manager": 7,
+        "client": 23,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 167,
+    "fields": {
+        "manager": 2,
+        "client": 27,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 168,
+    "fields": {
+        "manager": 2,
+        "client": 27,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 169,
+    "fields": {
+        "manager": 2,
+        "client": 27,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 170,
+    "fields": {
+        "manager": 7,
+        "client": 23,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 171,
+    "fields": {
+        "manager": 2,
+        "client": 27,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 172,
+    "fields": {
+        "manager": 2,
+        "client": 27,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 173,
+    "fields": {
+        "manager": 5,
+        "client": 17,
+        "date": "2024-02-21",
+        "comment": "Изменено поле с кем работает с  на ????",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 174,
+    "fields": {
+        "manager": 5,
+        "client": 17,
+        "date": "2024-02-21",
+        "comment": "Комментарий: Номер недействительный,написала в ВК",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 175,
+    "fields": {
+        "manager": 7,
+        "client": 23,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 176,
+    "fields": {
+        "manager": 7,
+        "client": 23,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 177,
+    "fields": {
+        "manager": 5,
+        "client": 17,
+        "date": "2024-02-21",
+        "comment": "Комментарий: Номер недействительный,написала в ВК",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 178,
+    "fields": {
+        "manager": 2,
+        "client": 27,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 179,
+    "fields": {
+        "manager": 2,
+        "client": 27,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 180,
+    "fields": {
+        "manager": 7,
+        "client": 23,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 181,
+    "fields": {
+        "manager": 5,
+        "client": 17,
+        "date": "2024-02-21",
+        "comment": "Изменено ФИО с Елисей Васильев на Фолькон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 182,
+    "fields": {
+        "manager": 5,
+        "client": 17,
+        "date": "2024-02-21",
+        "comment": "Комментарий: Номер недействительный,написала в ВК",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 183,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 184,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 185,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 186,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 187,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 188,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 189,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 190,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 191,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 192,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 193,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 194,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 195,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 196,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 197,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 198,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 199,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 200,
+    "fields": {
+        "manager": 7,
+        "client": 21,
+        "date": "2024-02-21",
+        "comment": "Комментарий: созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 201,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 202,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 203,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 204,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 205,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 206,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 207,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 208,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 209,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 210,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 211,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 212,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 213,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 214,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 215,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 216,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 217,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 218,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 219,
+    "fields": {
+        "manager": 7,
+        "client": 31,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 220,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 221,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 222,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 223,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 224,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 225,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 226,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 227,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 228,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 229,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 230,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 231,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 232,
+    "fields": {
+        "manager": 7,
+        "client": 21,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 233,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 234,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 235,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 236,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 237,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 238,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 239,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 240,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 241,
+    "fields": {
+        "manager": 7,
+        "client": 21,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 242,
+    "fields": {
+        "manager": 7,
+        "client": 19,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 243,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 244,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 245,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 246,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 247,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 248,
+    "fields": {
+        "manager": 7,
+        "client": 19,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 249,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 250,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 251,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 252,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 253,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 254,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 255,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 256,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 257,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 258,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 259,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 260,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 261,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 262,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 263,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 264,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 265,
+    "fields": {
+        "manager": 7,
+        "client": 26,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 266,
+    "fields": {
+        "manager": 7,
+        "client": 26,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 267,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 268,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 269,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 270,
+    "fields": {
+        "manager": 2,
+        "client": 28,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 271,
+    "fields": {
+        "manager": 7,
+        "client": 24,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 272,
+    "fields": {
+        "manager": 7,
+        "client": 20,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 273,
+    "fields": {
+        "manager": 7,
+        "client": 16,
+        "date": "2024-02-21",
+        "comment": "Взят в работу комментарий созвон\r\n",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 274,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Изменено поле с кем работает с  на С пластикой и овд",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 275,
+    "fields": {
+        "manager": 6,
+        "client": 39,
+        "date": "2024-02-21",
+        "comment": "Комментарий: Сейчас отдыхает. На следующей неделе приедет в Москву. Есть пару заявок на замер. Замерит и сбросит мне посчитать. Наберу ему еще на следующей неделе.",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 276,
+    "fields": {
+        "manager": 5,
+        "client": 17,
+        "date": "2024-02-22",
+        "comment": "Отказ комментарий не отвечает на сообщения,номер недействительный",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 277,
+    "fields": {
+        "manager": 5,
+        "client": 17,
+        "date": "2024-02-22",
+        "comment": "Отказ комментарий не отвечает на сообщения,номер недействительный",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 278,
+    "fields": {
+        "manager": 6,
+        "client": 40,
+        "date": "2024-02-22",
+        "comment": "Создание клиента",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 279,
+    "fields": {
+        "manager": 6,
+        "client": 40,
+        "date": "2024-02-22",
+        "comment": "Взят в работу комментарий Запустили сегодня первый заказ",
+        "file": null
+    }
+},
+{
+    "model": "core.log",
+    "pk": 280,
+    "fields": {
+        "manager": 6,
+        "client": 40,
+        "date": "2024-02-22",
+        "comment": "Комментарий: Хотят полностью перейти на рехау",
+        "file": null
+    }
+}
+]

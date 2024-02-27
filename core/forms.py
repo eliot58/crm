@@ -21,3 +21,5 @@ class LoginForm(forms.Form):
                 raise ValidationError('Неверный email или пароль')
         return password
     
+class ClientForm(forms.Form):
+    name_point = forms.CharField()

@@ -3,17 +3,20 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm
 from django.contrib.auth.decorators import login_required
-from .models import Client, Log, File, Calculator
+from .models import Client, Log, File, Calculator, Work
 from django.views.decorators.http import require_POST
 from django.http import JsonResponse, HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import EmailMessage
 from django.conf import settings
+from datetime import datetime, timedelta
 import requests
 import json
 
 #LOGIN LOGOUT
 #============================================================================
+
+
 def login_view(request):
     if request.method == 'POST':
         login_form = LoginForm(request.POST)
@@ -38,17 +41,42 @@ def logout_view(request):
 
 @login_required(login_url='/login/')
 def index(request):
-    r = requests.get(f"http://176.62.187.250/agent.php")
-
     try:
-        agents = json.loads(r.text)
-    except json.decoder.JSONDecodeError:
+        work = request.user.manager.work
+        if work.last_update - datetime.now() > timedelta(days = 1):
+            r = requests.get(f"http://176.62.187.250/agent.php")
+
+            try:
+                agents = json.loads(r.text)
+            except json.decoder.JSONDecodeError:
+                r = requests.get(f"http://176.62.187.250/agent.php")
+                agents = json.loads(r.text)
+
+            filtered = list(filter(lambda item: True if request.user.username.lower().find(item["manager"].lower()) != -1 else False, agents))
+
+            agents = sorted(filtered, key = lambda item: item["last_order_date"], reverse = True)
+
+            work.agents = agents
+            work.save()
+        else:
+            agents = work.agents
+    except Work.DoesNotExist:
         r = requests.get(f"http://176.62.187.250/agent.php")
-        agents = json.loads(r.text)
 
-    filtered = list(filter(lambda item: True if request.user.username.lower().find(item["manager"].lower()) != -1 else False, agents))
+        try:
+            agents = json.loads(r.text)
+        except json.decoder.JSONDecodeError:
+            r = requests.get(f"http://176.62.187.250/agent.php")
+            agents = json.loads(r.text)
 
-    agents = sorted(filtered, key = lambda item: item["last_order_date"], reverse = True)
+        filtered = list(filter(lambda item: True if request.user.username.lower().find(item["manager"].lower()) != -1 else False, agents))
+
+        agents = sorted(filtered, key = lambda item: item["last_order_date"], reverse = True)
+
+        work = Work()
+        work.manager = request.user.manager
+        work.agents = agents
+        work.save()
     
     return render(request, 'index.html', {"clients": Client.objects.all(), "calcs": Calculator.objects.all(), "agents": agents})
 
@@ -225,6 +253,18 @@ def take(request, id):
 
 @csrf_exempt
 def refuse(request, id):
+    client = Client.objects.get(id = id)
+    client.potential = None
+    client.save()
+    log = Log()
+    log.manager = request.user.manager
+    log.client = client
+    log.comment = f"Отказ комментарий {request.POST['comment']}"
+    log.save()
+    return redirect(index)
+
+@csrf_exempt
+def no_target(request, id):
     client = Client.objects.get(id = id)
     client.potential = None
     client.save()

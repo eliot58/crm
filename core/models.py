@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.conf import settings
 
 
 class Manager(models.Model):
@@ -38,12 +37,13 @@ class Client(models.Model):
     fullName = models.CharField(max_length = 256, default = '', verbose_name = "ФИО")
     address = models.CharField(max_length = 500, default = '', verbose_name = "Адрес")
     region = models.CharField(max_length = 256, default = '', verbose_name = "Регион")
-    director_phone = models.CharField(max_length = 256, default = '', verbose_name = "Телефон собственника")
-    manager_phone = models.CharField(max_length = 256, default = '', verbose_name = "Телефон менеджера")
+    director_phone = models.CharField(max_length = 20, default = '', unique = True, verbose_name = "Телефон собственника")
+    manager_phone = models.CharField(max_length = 20, default = '', unique = True, verbose_name = "Телефон менеджера")
     email = models.EmailField(null = True, blank = True, verbose_name = "Email")
     with_work = models.CharField(max_length = 600, default = '', verbose_name = "С кем работает")
     photo = models.ImageField(upload_to = "photo", null = True, blank = True, verbose_name = "Фото")
     potential = models.ForeignKey(Manager, on_delete = models.DO_NOTHING, null = True, blank = True)
+    refuse = models.BooleanField(default = False)
 
 
     def __str__(self) -> str:
@@ -53,6 +53,7 @@ class Client(models.Model):
     class Meta:
         verbose_name = "База"
         verbose_name_plural = "База"
+
 
 
 class File(models.Model):

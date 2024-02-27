@@ -421,7 +421,9 @@
 
             buttons_1.insertAdjacentHTML("beforeend",`<button type="button" onclick="sendCalc(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #FFBD53; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Отправить расчетчику</button>`)
 
-            buttons_2.insertAdjacentHTML("beforeend",`<button type="button" onclick="refuse(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #EF5252; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Отказаться</button>`)
+            buttons_2.insertAdjacentHTML("beforeend",`<button type="button" onclick="refuse(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #EF5252; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Не хочет с нами</button>`)
+
+            buttons_2.insertAdjacentHTML("beforeend",`<button type="button" onclick="refuse(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #EF5252; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Не целевой клиент</button>`)
 
             if (photo.length != 0) {
                 preview.style.background = `url("${photo}") 0 50%/100% auto no-repeat`;
@@ -490,6 +492,24 @@
         }
 
         function refuse(comment, id) {
+            if (comment.value == '') {
+                alert("Заполните комментарий, почему вы взяли клиента в работу или отказались")
+            } else {
+                let formData = new FormData();
+                formData.append("comment", comment.value)
+                let xhr = new XMLHttpRequest();
+                xhr.open('POST', `/refuse/${id}/`);
+                xhr.responseType = 'json';
+                xhr.onload = function() {
+                    if (xhr.status == 200) {
+                        location.reload()
+                    }
+                };
+                xhr.send(formData);
+            }
+        }
+
+        function no_target(comment, id) {
             if (comment.value == '') {
                 alert("Заполните комментарий, почему вы взяли клиента в работу или отказались")
             } else {

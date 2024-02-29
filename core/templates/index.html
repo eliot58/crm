@@ -34,12 +34,14 @@
                     <ul class="dropdown-list">
                         <li style="background-color: #A1E071;">
                             <img src="{% static 'img/add.svg' %}" alt="">
-                            <a href="#" onclick="document.querySelector('.popup-common-create').style.display = 'block'; return false;" style="color: #fff; padding-left: 5px;">Добавить в базу</a>
+                            <a href="#" onclick="document.querySelector('.popup-common-create').style.display = 'block'; return false;" style="color: #000; padding-left: 5px;">Добавить в базу</a>
                         </li>
                     </ul>
                     {% for client in clients %}
                         {% if not client.potential %}
-                            <div class="td" onclick="renderCommon('{{client.name_point}}', '{{client.fullName}}', '{{client.address}}', '{{client.region}}', '{{client.director_phone}}', '{{client.manager_phone}}', '{{client.email}}', '{{client.with_work}}', {% if client.photo %} '{{client.photo.url}}' {% else %} '' {% endif %}, '{{client.id}}')" style="cursor: pointer;">{{client.name_point}}</div>
+                            {% if not client.refuse %}
+                                <div class="td" onclick="renderCommon('{{client.name_point}}', '{{client.fullName}}', '{{client.address}}', '{{client.region}}', '{{client.director_phone}}', '{{client.manager_phone}}', '{{client.email}}', '{{client.with_work}}', {% if client.photo %} '{{client.photo.url}}' {% else %} '' {% endif %}, '{{client.id}}')" style="cursor: pointer;">{{client.name_point}}</div>
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 </div>
@@ -54,7 +56,7 @@
                         </li> -->
                         <li style="background-color: #E8AB4A;">
                             <img src="{% static 'img/subscribe.svg' %}" alt="">
-                            <a href="" style="color: #fff; padding-left: 5px;">Включить уведомления</a>
+                            <a href="" style="color: #000; padding-left: 5px;">Включить уведомления</a>
                         </li>
                     </ul>
                     {% for client in request.user.manager.client_set.all %}
@@ -73,7 +75,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div id="popup" class="popup-2 popup-sendCalc">
+            <div id="popup" class="popup popup-sendCalc">
                 <div class="popup-content">
                     <form action="" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column;">
                         {% csrf_token %}
@@ -92,17 +94,37 @@
                     </form>
                 </div>
             </div>
-            <div id="popup" class="popup-1 popup-common-create">
+            <div id="popup" class="popup popup-new_diler">
                 <div class="popup-content">
+                    <form action="{% url 'create_diler' %}" method="post" style="display: flex; flex-direction: column;">
+                        {% csrf_token %}
+                        <h1 style="font-size: 20px; font-weight: 500; margin-bottom: 10px;">Новый дилер</h1>
+                        <div class="form__input" style="margin-bottom: 20px;">
+                            <input type="text" name="login" placeholder="Логин">
+                        </div>
+                        <div class="form__input">
+                            <input type="password" name="password" placeholder="Пароль">
+                        </div>
+                        <input type="text" name="fullName" hidden>
+                        <input type="text" name="address" hidden>
+                        <input type="text" name="director_phone" hidden>
+                        <input type="text" name="manager_phone" hidden>
+                        <input type="email" name="email" hidden>
+                        <button type="submit" style="background-color: #A1E071; padding: 10px 0px; border: none; border-radius: 4px; color: #fff;">Создать</button>
+                    </form>
+                </div>
+            </div>
+            <div id="popup" class="popup popup-common-create">
+                <div class="popup-content" style="width: 80%;">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <h1 style="font-size: 20px; font-weight: 500;">Добавление клиента в общую базу</h1>
+                        <h1 style="font-size: 20px; font-weight: 500; color: #fff;">Добавление клиента в общую базу</h1>
                         <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-common-create').style.display = 'none';" alt="">
                     </div>
                     <form action="{% url 'createClient' %}" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
                         {% csrf_token %}
                         <div style="display: flex; width: 100%;">
-                            <div class="logo_preview" style="min-width: 200px; min-height: 200px; position: relative; border-radius: 8px; background-color: #F6F6F6; text-align: center; margin-right: 20px;" onclick="this.nextElementSibling.click()">
-                                <p style="position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);">Фото</p>
+                            <div class="logo_preview" style="min-width: 200px; min-height: 200px; position: relative; border-radius: 8px; background-color: #454545; text-align: center; margin-right: 20px;" onclick="this.nextElementSibling.click()">
+                                <p style="position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%); color: #fff;">Фото</p>
                             </div>
                             <input class="logo_input" type="file" name="photo" hidden>
                             <div style="width: 50%; margin-right: 20px;">
@@ -115,6 +137,9 @@
                                 <div class="form__input">
                                     <input type="text" name="director_phone" placeholder="Телефон собственника">
                                 </div>
+                                <ul class="errorlist" style="display: none;">
+                                    <li>Пользоваетль с таким номером уже есть</li>
+                                </ul>
                                 <div class="form__input" style="margin-bottom: 0px;">
                                     <input type="text" name="email" placeholder="E-mail">
                                 </div>
@@ -135,15 +160,15 @@
                             </div>
                         </div>
                         <div style="display: flex; justify-content: end;">
-                            <button type="submit" style="background-color: #A8EB76; color: #000; padding: 15px 0px;border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px; margin-top: 20px;">Сохранить</button>
+                            <button type="button" onclick="validate()" style="background-color: #A8EB76; color: #000; padding: 15px 0px;border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px; margin-top: 20px;">Сохранить</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <div id="popup" class="popup-1 popup-common">
-                <div class="popup-content">
+            <div id="popup" class="popup popup-common">
+                <div class="popup-content" style="width: 90%;">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <h1 style="font-size: 20px; font-weight: 500;">Общая база</h1>
+                        <h1 style="font-size: 20px; font-weight: 500; color: #fff;">Общая база</h1>
                         <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-common').style.display = 'none';" alt="">
                     </div>
                     <form action="" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
@@ -182,8 +207,8 @@
                             </div>
                         </div>
                         <div style="display: flex;">
-                            <div class="logo_preview" style="min-width: 200px; min-height: 200px; position: relative; border-radius: 8px; background-color: #F6F6F6; text-align: center;" onclick="this.nextElementSibling.click()">
-                                <p style="position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);">Фото</p>
+                            <div class="logo_preview" style="min-width: 200px; min-height: 200px; position: relative; border-radius: 8px; background-color: #454545; text-align: center;" onclick="this.nextElementSibling.click()">
+                                <p style="position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%); color: #fff;">Фото</p>
                             </div>
                             <input type="file" class="logo_input" name="photo" hidden>
                             <div class="form__input" style="margin: 0px 20px;">
@@ -196,10 +221,10 @@
                     </form>
                 </div>
             </div>
-            <div id="popup" class="popup-1 popup-potential">
-                <div class="popup-content">
+            <div id="popup" class="popup popup-potential">
+                <div class="popup-content" style="width: 90%;">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <h1 style="font-size: 20px; font-weight: 500;">Потенциальные клиенты</h1>
+                        <h1 style="font-size: 20px; font-weight: 500; color: #fff;">Потенциальные клиенты</h1>
                         <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-potential').style.display = 'none';" alt="">
                     </div>
                     <form action="" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
@@ -238,8 +263,8 @@
                             </div>
                         </div>
                         <div style="display: flex;">
-                            <div class="logo_preview" style="min-width: 200px; min-height: 200px;position: relative; border-radius: 8px; background-color: #F6F6F6; text-align: center;" onclick="this.nextElementSibling.click()">
-                                <p style="position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);">Фото</p>
+                            <div class="logo_preview" style="min-width: 200px; min-height: 200px;position: relative; border-radius: 8px; background-color: #454545; text-align: center;" onclick="this.nextElementSibling.click()">
+                                <p style="position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%); color: #fff;">Фото</p>
                             </div>
                             <input type="file" class="logo_input" name="photo" hidden>
                             <div class="form__input" style="margin: 0px 20px;">
@@ -250,7 +275,7 @@
                                     <button type="submit" style="background-color: #c3ff53; color: #000; padding: 40px 0px; border-radius: 12px; width: 200px; font-weight: 600;">Сохранить</button>
                                 </div>
                                 <div class="buttons-2" style="display: flex; flex-direction: column;justify-content: space-between;">
-                                    <button style="background-color: #D4D4D4; color: #000; padding: 40px 0px; border-radius: 12px; width: 200px; font-weight: 600;">Создать нового дилера</button>
+                                    <button type="button" onclick="createDiler()" style="background-color: #D4D4D4; color: #000; padding: 20px 0px; border-radius: 12px; width: 200px; font-weight: 600;">Создать нового дилера</button>
                                 </div>
                             </div>
                         </div>
@@ -258,10 +283,10 @@
                 </div>
             </div>
 
-            <div id="popup" class="popup-1 popup-works">
-                <div class="popup-content">
+            <div id="popup" class="popup popup-works">
+                <div class="popup-content" style="width: 80%;">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <h1 style="font-size: 20px; font-weight: 500;">Работающие клиенты</h1>
+                        <h1 style="font-size: 20px; font-weight: 500; color: #fff;">Работающие клиенты</h1>
                         <img src="{% static 'img/close.svg' %}" style="cursor: pointer;" onclick="document.querySelector('.popup-works').style.display = 'none';" alt="">
                     </div>
                     <form action="" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; height: 100%; margin: 20px 0px;">
@@ -303,6 +328,8 @@
         const common = document.querySelector(".popup-common")
         const potential = document.querySelector(".popup-potential")
         const works = document.querySelector(".popup-works")
+        const create = document.querySelector(".popup-common-create")
+        const diler = document.querySelector(".popup-new_diler")
 
 
         window.addEventListener('click', function(event) {
@@ -314,6 +341,24 @@
 			}
 			
 		});
+
+        function validate() {
+            const form = create.querySelector('form')
+            let formData = new FormData(form);
+			let xhr = new XMLHttpRequest();
+			xhr.open('POST', `/validate/`);
+			xhr.responseType = 'json';
+			xhr.onload = function() {
+				if (xhr.status == 200) {
+                    if (xhr.response["director_phone"]) {
+                        form.submit()
+                    } else {
+                        create.querySelector(".errorlist").style.display = "block"
+                    }
+				}
+			};
+			xhr.send(formData);
+        }
 
         function renderCommon(name_point, fullName, address, region, director_phone, manager_phone, email, with_work, photo, id) {
             const preview = common.querySelector(".logo_preview")
@@ -421,9 +466,9 @@
 
             buttons_1.insertAdjacentHTML("beforeend",`<button type="button" onclick="sendCalc(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #FFBD53; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Отправить расчетчику</button>`)
 
-            buttons_2.insertAdjacentHTML("beforeend",`<button type="button" onclick="refuse(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #EF5252; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Не хочет с нами</button>`)
+            buttons_2.insertAdjacentHTML("beforeend",`<button type="button" onclick="refuse(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #EF5252; color: #000; padding: 20px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Не хочет с нами</button>`)
 
-            buttons_2.insertAdjacentHTML("beforeend",`<button type="button" onclick="refuse(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #EF5252; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Не целевой клиент</button>`)
+            buttons_2.insertAdjacentHTML("beforeend",`<button type="button" onclick="refuse(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #EF5225; color: #000; padding: 20px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Не целевой клиент</button>`)
 
             if (photo.length != 0) {
                 preview.style.background = `url("${photo}") 0 50%/100% auto no-repeat`;
@@ -465,6 +510,28 @@
 
             works.style.display = "block"
 
+        }
+
+        function createDiler(){
+            const name_point_input = potential.querySelector("input[name='name_point']")
+            const address_input = potential.querySelector("input[name='address']")
+            const fullName_input = potential.querySelector("input[name='fullName']")
+            const region_input = potential.querySelector("input[name='region']")
+            const director_phone_input = potential.querySelector("input[name='director_phone']")
+            const manager_phone_input = potential.querySelector("input[name='manager_phone']")
+            const email_input = potential.querySelector("input[name='email']")
+            const with_work_input = potential.querySelector("input[name='with_work']")
+
+            if (name_point_input.value == '' || address_input.value == '' || fullName_input.value == '' || region_input.value == '' || director_phone_input.value == '' || manager_phone_input.value == '' || email_input.value == '' || with_work_input.value == '') {
+                alert("Заполните все поля")
+            } else {
+                diler.querySelector("input[name='address']").value = address_input.value
+                diler.querySelector("input[name='fullName']").value = fullName_input.value
+                diler.querySelector("input[name='director_phone']").value = director_phone_input.value
+                diler.querySelector("input[name='manager_phone']").value = manager_phone_input.value
+                diler.querySelector("input[name='email']").value = email_input.value
+                diler.style.display = "block"
+            }
         }
 
         function take(is_take, comment, id) {

@@ -6,6 +6,8 @@ class Manager(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE)
     email = models.EmailField()
     phone = models.CharField(max_length = 20)
+    last_works_update = models.DateField(null = True, blank = True)
+    idpeople = models.IntegerField()
 
 
     def __str__(self) -> str:
@@ -38,7 +40,7 @@ class Client(models.Model):
     address = models.CharField(max_length = 500, default = '', verbose_name = "Адрес")
     region = models.CharField(max_length = 256, default = '', verbose_name = "Регион")
     director_phone = models.CharField(max_length = 20, default = '', unique = True, verbose_name = "Телефон собственника")
-    manager_phone = models.CharField(max_length = 20, default = '', unique = True, verbose_name = "Телефон менеджера")
+    manager_phone = models.CharField(max_length = 20, default = '', verbose_name = "Телефон менеджера")
     email = models.EmailField(null = True, blank = True, verbose_name = "Email")
     with_work = models.CharField(max_length = 600, default = '', verbose_name = "С кем работает")
     photo = models.ImageField(upload_to = "photo", null = True, blank = True, verbose_name = "Фото")
@@ -53,6 +55,17 @@ class Client(models.Model):
     class Meta:
         verbose_name = "База"
         verbose_name_plural = "База"
+
+
+class Work(models.Model):
+    idcustomer = models.IntegerField()
+    c_name = models.CharField(max_length = 256)
+    create_date = models.CharField(max_length = 10)
+    phone = models.CharField(max_length = 20, null = True, blank = True)
+    email = models.EmailField(null = True, blank = True)
+    last_order_date = models.CharField(max_length = 10)
+    manager = models.CharField(max_length = 256)
+    manager_id = models.IntegerField()
 
 
 

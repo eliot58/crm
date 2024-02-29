@@ -2,6 +2,7 @@ import os
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm
+from .tasks import saveworks
 from django.contrib.auth.decorators import login_required
 from .models import Client, Log, File, Calculator, Work
 from django.views.decorators.http import require_POST
@@ -13,9 +14,10 @@ from datetime import datetime, timedelta
 import requests
 import json
 
+
+
 #LOGIN LOGOUT
 #============================================================================
-
 
 def login_view(request):
     if request.method == 'POST':
@@ -41,9 +43,14 @@ def logout_view(request):
 
 @login_required(login_url='/login/')
 def index(request):
-    try:
-        work = request.user.manager.work
-        if work.last_update - datetime.now() > timedelta(days = 1):
+    if request.user.is_superuser:
+        logout(request)
+        return redirect(login_view)
+    
+    works = Work.objects.filter(manager_id = request.user.manager.id).order_by("-last_order_date")
+
+    if request.user.manager.last_works_update:
+        if request.user.manager.last_works_update - datetime.now().date() > timedelta(days = 1):
             r = requests.get(f"http://176.62.187.250/agent.php")
 
             try:
@@ -56,11 +63,18 @@ def index(request):
 
             agents = sorted(filtered, key = lambda item: item["last_order_date"], reverse = True)
 
-            work.agents = agents
-            work.save()
+            saveworks.delay(agents, request.user.manager.id)
+
+            manager = request.user.manager
+
+            manager.last_works_update = datetime.now().date()
+
+            manager.save()
+
         else:
-            agents = work.agents
-    except Work.DoesNotExist:
+            agents = works
+
+    else:  
         r = requests.get(f"http://176.62.187.250/agent.php")
 
         try:
@@ -73,10 +87,13 @@ def index(request):
 
         agents = sorted(filtered, key = lambda item: item["last_order_date"], reverse = True)
 
-        work = Work()
-        work.manager = request.user.manager
-        work.agents = agents
-        work.save()
+        saveworks.delay(agents, request.user.manager.id)
+
+        manager = request.user.manager
+
+        manager.last_works_update = datetime.now().date()
+
+        manager.save()
     
     return render(request, 'index.html', {"clients": Client.objects.all(), "calcs": Calculator.objects.all(), "agents": agents})
 
@@ -294,3 +311,21 @@ def send_calc(request, id):
         
     email.send()
     return redirect(index)
+
+def createDiler(request):
+    query = f"exec pg_create_customer_for_lk '{request.user.manager.idpeople}', '{request.POST['fullName']}', '{request.POST['address']}', '{request.POST['director_phone']}', '{request.POST['manager_phone']}', '{request.POST['email']}', '{request.POST['login']}', '{request.POST['password']}'"
+
+    requests.post(f'http://176.62.187.250/createService.php', data={"query": query})
+    return redirect(index)
+
+
+@csrf_exempt
+def validate(request):
+    try:
+        Client.objects.get(director_phone = request.POST["director_phone"])
+        return JsonResponse({"director_phone": False})
+    except Client.DoesNotExist:
+        work = Work.objects.filter(phone = request.POST["director_phone"])
+        if len(work) == 0:
+            return JsonResponse({"director_phone": True})
+        return JsonResponse({"director_phone": False})

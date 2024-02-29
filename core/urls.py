@@ -13,4 +13,6 @@ urlpatterns = [
     path('refuse/<int:id>/', refuse, name='refuse'),
     path('get_logs/<int:id>/', get_logs, name='get_logs'),
     path('sendCalc/<int:id>/', send_calc, name='send_calc'),
+    path('validate/', validate, name='validate'),
+    path('createDiler/', createDiler, name='create_diler'),
 ]

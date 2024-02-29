@@ -107,7 +107,7 @@ header {
 
 a {
 	text-decoration: none;
-	color: #000;
+	color: #fff;
 }
 
 nav ul {
@@ -188,25 +188,8 @@ nav li {
 	font-weight: 600;
 }
 
-.popup-1 {
-	display: none;
-	position: absolute;
-	top: 75px;
-	left: 0;
-	width: 100%;
-	z-index: 1;
-}
 
-.popup-1 .popup-content {
-	background-color: #fff;
-	padding: 20px 30px 0px 30px;
-	width: 100%;
-	position: relative;
-	border: 2px solid #939393;
-	border-radius: 0px 0px 24px 24px;
-}
-
-.popup-2 {
+.popup {
 	display: none;
 	position: fixed;
 	top: 0;
@@ -217,7 +200,7 @@ nav li {
 	z-index: 100;
 }
 
-.popup-2 .popup-content {
+.popup-content {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -225,7 +208,7 @@ nav li {
 	padding: 20px;
 	border-radius: 5px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-	background-color: #fff;
+	background-color: #494949;
 }
 
 .form__input {
@@ -239,6 +222,7 @@ nav li {
 .form__input textarea {
 	width: 100%;
 	background-color: inherit;
+	color: #fff;
 }
 
 .auth__button {
@@ -309,7 +293,7 @@ nav li {
 }
 
 .log:nth-child(even) {
-	background-color: #F6F6F6;
+	background-color: #454545;
 }
 
 #snackbar {

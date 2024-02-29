@@ -21,5 +21,7 @@ class LoginForm(forms.Form):
                 raise ValidationError('Неверный email или пароль')
         return password
     
-class ClientForm(forms.Form):
-    name_point = forms.CharField()
+class ClientForm(forms.ModelForm):
+    class Meta:
+        model = Client
+        fields = ['name_point', 'fullName', 'address', 'region', 'director_phone', 'manager_phone', 'email', 'with_work']

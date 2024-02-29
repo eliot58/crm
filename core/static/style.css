@@ -151,7 +151,7 @@ nav li {
 
 .head {
 	padding: 25px;
-	color: #000;
+	color: #fff;
 	text-align: center;
 	font-weight: 600;
 	font-size: 24px;
@@ -176,6 +176,7 @@ nav li {
 
 .tbody div.td {
 	padding: 10px 20px;
+	color: #fff;
 }
 
 .tbody div.td:nth-child(odd) {
@@ -290,6 +291,7 @@ nav li {
 
 .log {
 	padding: 5px 10px;
+	color: #fff;
 }
 
 .log:nth-child(even) {

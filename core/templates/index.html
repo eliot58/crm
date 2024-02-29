@@ -29,12 +29,12 @@
     <div class="container">
         <div class="table">
             <div class="col" style="border-radius: 24px 0px 0px 0px;">
-                <div class="head" style="background-color: #A8EB76; border-radius: 24px 0px 0px 0px; cursor: pointer;" onclick="this.nextElementSibling.querySelector('.dropdown-list').style.display = (this.nextElementSibling.querySelector('.dropdown-list').style.display === 'block') ? 'none' : 'block';">Общая база</div>
+                <div class="head" style="background-color: #212220; border-radius: 24px 0px 0px 0px; cursor: pointer;" onclick="this.nextElementSibling.querySelector('.dropdown-list').style.display = (this.nextElementSibling.querySelector('.dropdown-list').style.display === 'block') ? 'none' : 'block';">Общая база</div>
                 <div class="tbody">
                     <ul class="dropdown-list">
-                        <li style="background-color: #A1E071;">
+                        <li style="background-color: #212220;">
                             <img src="{% static 'img/add.svg' %}" alt="">
-                            <a href="#" onclick="document.querySelector('.popup-common-create').style.display = 'block'; return false;" style="color: #000; padding-left: 5px;">Добавить в базу</a>
+                            <a href="#" onclick="document.querySelector('.popup-common-create').style.display = 'block'; return false;" style="color: #fff; padding-left: 5px;">Добавить в базу</a>
                         </li>
                     </ul>
                     {% for client in clients %}
@@ -47,25 +47,27 @@
                 </div>
             </div>
             <div class="col">
-                <div class="head" style="background-color: #FFBD53; cursor: pointer;" onclick="this.nextElementSibling.querySelector('.dropdown-list').style.display = (this.nextElementSibling.querySelector('.dropdown-list').style.display === 'block') ? 'none' : 'block';">Потенциальные клиенты</div>
+                <div class="head" style="background-color: #212220; cursor: pointer;" onclick="this.nextElementSibling.querySelector('.dropdown-list').style.display = (this.nextElementSibling.querySelector('.dropdown-list').style.display === 'block') ? 'none' : 'block';">Потенциальные клиенты</div>
                 <div class="tbody">
                     <ul class="dropdown-list">
                         <!-- <li style="background-color: #EFB557;">
                             <img src="{% static 'img/add.svg' %}" alt="">
                             <a href="#" onclick="document.querySelector('.popup-common-2').style.display = 'block'; return false;" style="color: #fff; padding-left: 5px;">Добавить в базу</a>
                         </li> -->
-                        <li style="background-color: #E8AB4A;">
+                        <li style="background-color: #212220;">
                             <img src="{% static 'img/subscribe.svg' %}" alt="">
-                            <a href="" style="color: #000; padding-left: 5px;">Включить уведомления</a>
+                            <a href="" style="color: #fff; padding-left: 5px;">Включить уведомления</a>
                         </li>
                     </ul>
                     {% for client in request.user.manager.client_set.all %}
-                        <div class="td" onclick="renderPotential('{{client.name_point}}', '{{client.fullName}}', '{{client.address}}', '{{client.region}}', '{{client.director_phone}}', '{{client.manager_phone}}', '{{client.email}}', '{{client.with_work}}', {% if client.photo %} '{{client.photo.url}}' {% else %} '' {% endif %}, '{{client.id}}')" style="cursor: pointer;">{{client.log_set.all.0.date|date:'d.m.Y'}} <span style='color: #FFBD53;'>{{client.name_point}}</span> {{client.log_set.all.last.comment}}</div>
+                        {% if not client.refuse %}
+                            <div class="td" onclick="renderPotential('{{client.name_point}}', '{{client.fullName}}', '{{client.address}}', '{{client.region}}', '{{client.director_phone}}', '{{client.manager_phone}}', '{{client.email}}', '{{client.with_work}}', {% if client.photo %} '{{client.photo.url}}' {% else %} '' {% endif %}, '{{client.id}}')" style="cursor: pointer;">{{client.log_set.all.0.date|date:'d.m.Y'}} <span style='color: #FFBD53;'>{{client.name_point}}</span> {{client.log_set.all.last.comment}}</div>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
             <div class="col" style="border-radius: 0px 24px 0px 0px;">
-                <div class="head" style="background-color: #B465D3; border-radius: 0px 24px 0px 0px;">Работающие клиенты</div>
+                <div class="head" style="background-color: #212220; border-radius: 0px 24px 0px 0px;">Работающие клиенты</div>
                 <div class="tbody">
                     <ul>
                         <li></li>
@@ -98,8 +100,8 @@
                 <div class="popup-content">
                     <form action="{% url 'create_diler' %}" method="post" style="display: flex; flex-direction: column;">
                         {% csrf_token %}
-                        <h1 style="font-size: 20px; font-weight: 500; margin-bottom: 10px;">Новый дилер</h1>
-                        <div class="form__input" style="margin-bottom: 20px;">
+                        <h1 style="font-size: 20px; font-weight: 500; margin-bottom: 10px; color: #fff;">Новый дилер</h1>
+                        <div class="form__input" style="margin: 0px;">
                             <input type="text" name="login" placeholder="Логин">
                         </div>
                         <div class="form__input">
@@ -160,7 +162,7 @@
                             </div>
                         </div>
                         <div style="display: flex; justify-content: end;">
-                            <button type="button" onclick="validate()" style="background-color: #A8EB76; color: #000; padding: 15px 0px;border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px; margin-top: 20px;">Сохранить</button>
+                            <button type="button" onclick="validate()" style="background-color: #212220; color: #fff; padding: 15px 0px;border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px; margin-top: 20px;">Сохранить</button>
                         </div>
                     </form>
                 </div>
@@ -203,7 +205,7 @@
                                 </div>
                             </div>
                             <div class="history" style="width: 33.33%; max-height: 220px; border: 1px solid #939393; border-radius: 8px; margin-left: 20px; overflow-y: scroll;">
-                                <h1 style="font-weight: 500; margin: 10px 0px 10px 10px;">История отношений</h1>
+                                <h1 style="font-weight: 500; margin: 10px 0px 10px 10px; color: #fff;">История отношений</h1>
                             </div>
                         </div>
                         <div style="display: flex;">
@@ -215,7 +217,7 @@
                                 <textarea name="comment" cols="140" rows="10" placeholder="Комментарий"></textarea>
                             </div>
                             <div class="buttons" style="display: flex; flex-direction: column; justify-content: space-between;">
-                                <button type="submit" style="background-color: #FFBD53; color: #000; padding: 15px 0px; border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px;">Сохранить</button>
+                                <button type="submit" style="background-color: #212220; color: #fff; padding: 15px 0px; border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px;">Сохранить</button>
                             </div>
                         </div>
                     </form>
@@ -259,7 +261,7 @@
                                 </div>
                             </div>
                             <div class="history" style="width: 33.33%; max-height: 220px; border: 1px solid #939393; border-radius: 8px; margin-left: 20px; overflow-y: scroll;">
-                                <h1 style="font-weight: 500; margin: 10px 0px 0px 10px;">История отношений</h1>
+                                <h1 style="font-weight: 500; margin: 10px 0px 0px 10px; color: #fff;">История отношений</h1>
                             </div>
                         </div>
                         <div style="display: flex;">
@@ -272,10 +274,10 @@
                             </div>
                             <div style="display: flex;">
                                 <div class="buttons-1" style="display: flex; flex-direction: column; justify-content: space-between; margin-right: 20px;">
-                                    <button type="submit" style="background-color: #c3ff53; color: #000; padding: 40px 0px; border-radius: 12px; width: 200px; font-weight: 600;">Сохранить</button>
+                                    <button type="submit" style="background-color: #212220; color: #fff; padding: 40px 0px; border-radius: 12px; width: 200px; font-weight: 600;">Сохранить</button>
                                 </div>
                                 <div class="buttons-2" style="display: flex; flex-direction: column;justify-content: space-between;">
-                                    <button type="button" onclick="createDiler()" style="background-color: #D4D4D4; color: #000; padding: 20px 0px; border-radius: 12px; width: 200px; font-weight: 600;">Создать нового дилера</button>
+                                    <button type="button" onclick="createDiler()" style="background-color: #212220; color: #fff; padding: 20px 0px; border-radius: 12px; width: 200px; font-weight: 600;">Создать нового дилера</button>
                                 </div>
                             </div>
                         </div>
@@ -396,8 +398,8 @@
 
             form.action = `/updateClient/${id}/`
 
-            buttons.insertAdjacentHTML("beforeend",`<button type="button" onclick="take(true, this.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #A8EB76; color: #000; padding: 15px 0px;border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px;">Взять в работу</button>`)
-            buttons.insertAdjacentHTML("beforeend",`<button type="button" onclick="take(false, this.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #EF5252; color: #000; padding: 15px 0px;border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px;">Не беру</button>`)
+            buttons.insertAdjacentHTML("beforeend",`<button type="button" onclick="take(true, this.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #212220; color: #fff; padding: 15px 0px;border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px;">Взять в работу</button>`)
+            buttons.insertAdjacentHTML("beforeend",`<button type="button" onclick="take(false, this.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #212220; color: #fff; padding: 15px 0px;border-radius: 12px; width: 400px; font-weight: 600; font-size: 24px;">Не беру</button>`)
 
 
             if (photo.length != 0) {
@@ -464,11 +466,11 @@
 
             form.action = `/updateClient/${id}/`
 
-            buttons_1.insertAdjacentHTML("beforeend",`<button type="button" onclick="sendCalc(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #FFBD53; color: #000; padding: 40px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Отправить расчетчику</button>`)
+            buttons_1.insertAdjacentHTML("beforeend",`<button type="button" onclick="sendCalc(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #212220; color: #fff; padding: 40px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Отправить расчетчику</button>`)
 
-            buttons_2.insertAdjacentHTML("beforeend",`<button type="button" onclick="refuse(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #EF5252; color: #000; padding: 20px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Не хочет с нами</button>`)
+            buttons_2.insertAdjacentHTML("beforeend",`<button type="button" onclick="refuse(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #212220; color: #fff; padding: 20px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Не хочет с нами</button>`)
 
-            buttons_2.insertAdjacentHTML("beforeend",`<button type="button" onclick="refuse(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #EF5225; color: #000; padding: 20px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Не целевой клиент</button>`)
+            buttons_2.insertAdjacentHTML("beforeend",`<button type="button" onclick="no_target(this.parentNode.parentNode.previousElementSibling.querySelector('textarea'), ${id})" style="background-color: #212220; color: #fff; padding: 20px 0px;border-radius: 12px; width: 200px; font-weight: 600;">Не целевой клиент</button>`)
 
             if (photo.length != 0) {
                 preview.style.background = `url("${photo}") 0 50%/100% auto no-repeat`;
@@ -530,6 +532,7 @@
                 diler.querySelector("input[name='director_phone']").value = director_phone_input.value
                 diler.querySelector("input[name='manager_phone']").value = manager_phone_input.value
                 diler.querySelector("input[name='email']").value = email_input.value
+                potential.style.display = "none"
                 diler.style.display = "block"
             }
         }
@@ -583,7 +586,7 @@
                 let formData = new FormData();
                 formData.append("comment", comment.value)
                 let xhr = new XMLHttpRequest();
-                xhr.open('POST', `/refuse/${id}/`);
+                xhr.open('POST', `/no_target/${id}/`);
                 xhr.responseType = 'json';
                 xhr.onload = function() {
                     if (xhr.status == 200) {

@@ -7,7 +7,7 @@ class Manager(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length = 20)
     last_works_update = models.DateField(null = True, blank = True)
-    idpeople = models.IntegerField()
+    idpeople = models.IntegerField(null = True, blank = True)
 
 
     def __str__(self) -> str:

@@ -241,11 +241,12 @@ def updateClient(request, id):
     client.save()
 
     if "comment" in request.POST:
-        log = Log()
-        log.manager = request.user.manager
-        log.client = client
-        log.comment = f"Комментарий: {request.POST['comment']}"
-        log.save()
+        if request.POST["comment"] != "":
+            log = Log()
+            log.manager = request.user.manager
+            log.client = client
+            log.comment = f"Комментарий: {request.POST['comment']}"
+            log.save()
 
     return redirect(index)
 
@@ -276,19 +277,19 @@ def refuse(request, id):
     log = Log()
     log.manager = request.user.manager
     log.client = client
-    log.comment = f"Отказ комментарий {request.POST['comment']}"
+    log.comment = f"Не хочет с нами комментарий {request.POST['comment']}"
     log.save()
     return redirect(index)
 
 @csrf_exempt
 def no_target(request, id):
     client = Client.objects.get(id = id)
-    client.potential = None
+    client.refuse = True
     client.save()
     log = Log()
     log.manager = request.user.manager
     log.client = client
-    log.comment = f"Отказ комментарий {request.POST['comment']}"
+    log.comment = f"Не целевой клиент комментарий {request.POST['comment']}"
     log.save()
     return redirect(index)
 
